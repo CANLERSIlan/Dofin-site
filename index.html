@@ -383,7 +383,7 @@ const T = {
   "end.title":"Be among the first to play","end.p":"Sign up and get the beta link as soon as it opens.",
   "ft.by":"Made by Ilan Canlers","ft.priv":"Privacy",
   "ft.privtext":"Privacy: the email address you give here is only used to tell you about the Dofin beta and new versions. It is never sold or shared with third parties. You can unsubscribe at any time with the link in every email, or ask to access and delete your data. Dofin is not affiliated with any console maker; the brands mentioned belong to their owners.",
-  "ok":"Almost there! Check your inbox and click the link to confirm.","bad":"That email doesn't look right. Check it and try again.","off":"Sign-up opens with the site's launch."
+  "ok":"Almost there! Check your inbox (and your spam folder) and click the link to confirm.","bad":"That email doesn't look right. Check it and try again.","off":"Sign-up opens with the site's launch."
  },
  fr: {}
 };
@@ -392,7 +392,7 @@ document.querySelectorAll("[data-i18n]").forEach(e=>T.fr[e.dataset.i18n]=e.textC
 document.querySelectorAll("[data-i18n-html]").forEach(e=>T.fr[e.dataset.i18nHtml]=e.innerHTML);
 document.querySelectorAll("[data-i18n-ph]").forEach(e=>T.fr[e.dataset.i18nPh]=e.placeholder);
 document.querySelectorAll("[data-i18n]").forEach(e=>{ if(/<span class="btn-k/.test(e.innerHTML)) T.fr[e.dataset.i18n]=e.innerHTML; });
-Object.assign(T.fr,{"ok":"Presque fini ! Vérifie ta boîte mail et clique sur le lien pour confirmer.","bad":"Cette adresse ne semble pas valide. Vérifie-la et réessaie.","off":"Les inscriptions ouvriront avec la mise en ligne du site."});
+Object.assign(T.fr,{"ok":"Presque fini ! Vérifie ta boîte mail (et tes spams) et clique sur le lien pour confirmer.","bad":"Cette adresse ne semble pas valide. Vérifie-la et réessaie.","off":"Les inscriptions ouvriront avec la mise en ligne du site."});
 
 let lang="fr";
 function setLang(l){
