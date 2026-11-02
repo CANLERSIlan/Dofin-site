@@ -443,7 +443,7 @@ wire("signup-end","msg-end");
 </script>
 <script>
 // Anonymous visit count (no cookie, no IP stored): see stats.dofinapp.com.
-try { navigator.sendBeacon("https://dofin-stats.canlersilan1.workers.dev/v", JSON.stringify({ p: location.pathname, r: document.referrer })); } catch (e) {}
+try { navigator.sendBeacon("https://stats.dofinapp.com/v", JSON.stringify({ p: location.pathname, r: document.referrer })); } catch (e) {}
 </script>
 </body>
 </html>
