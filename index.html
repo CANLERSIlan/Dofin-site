@@ -63,6 +63,16 @@ form.signup{display:flex;gap:10px;max-width:520px;flex-wrap:wrap}
 .signup button{font:inherit;font-weight:800;font-size:16px;border:0;cursor:pointer;color:#fff;background:var(--tide);border-radius:14px;padding:15px 22px;
   box-shadow:0 10px 30px rgba(47,143,255,.35);white-space:nowrap}
 .signup button:hover{background:#4a9dff}
+.dl{display:inline-flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;background:var(--tide);color:#fff;font-family:var(--display);font-weight:700;font-size:19px;
+  padding:16px 30px;border-radius:999px;box-shadow:0 12px 36px rgba(47,143,255,.45);transition:transform .15s,box-shadow .15s;white-space:nowrap}
+.dl:hover{transform:translateY(-2px);box-shadow:0 16px 44px rgba(47,143,255,.55)}
+.dl svg{width:20px;height:20px;flex:none}
+.dl-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+.dl-guide{color:var(--mist);font-weight:600;font-size:15px;text-decoration:none;border-bottom:1px solid var(--line)}
+.dl-guide:hover{color:var(--foam)}
+nav .links a.nav-dl{background:var(--tide);color:#fff}
+nav .links a.nav-dl:hover{background:#4a9dff;color:#fff}
+.news-label{font-weight:700;font-size:15px;margin:22px 0 10px;color:var(--foam)}
 .reassure{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;color:var(--mist);font-size:14px}
 .reassure span{display:inline-flex;align-items:center;gap:7px}
 .reassure svg{width:15px;height:15px;color:var(--ok);flex:none}
@@ -173,6 +183,7 @@ footer a{color:var(--foam);text-decoration:none} footer a:hover{text-decoration:
       <div class="links">
         <a class="hide-s" href="#features" data-i18n="nav.features">Fonctionnalités</a>
         <a class="hide-s" href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a class="nav-dl" href="/beta/" data-i18n="nav.dl">Télécharger</a>
         <a class="yt" href="https://www.youtube.com/@Dofinapp" rel="noopener">
           <svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="5" fill="#ff0033"/><path d="M11 6l7 4-7 4z" fill="#fff"/></svg>
           <span class="t">YouTube</span>
@@ -190,19 +201,17 @@ footer a{color:var(--foam);text-decoration:none} footer a:hover{text-decoration:
   <div class="wrap">
     <div class="hero">
       <div>
-        <span class="pill"><i></i><span data-i18n="hero.pill">Bêta Mac · inscriptions ouvertes</span></span>
+        <span class="pill"><i></i><span data-i18n="hero.pill">Bêta gratuite · disponible maintenant</span></span>
         <h1 data-i18n-html="hero.title">Toutes tes consoles.<br><em>Un seul Mac.</em></h1>
         <p class="lead" data-i18n="hero.lead">Dofin range tous tes jeux dans une seule bibliothèque, trouve la bonne console et les lance dans le bon émulateur. Ensuite, tu joues à la manette, depuis le canapé.</p>
-        <form class="signup" id="signup-hero" novalidate>
-          <label class="sr" for="email-hero" style="position:absolute;left:-9999px" data-i18n="form.label">Ton adresse e-mail</label>
-          <input id="email-hero" type="email" autocomplete="email" required data-i18n-ph="form.ph" placeholder="ton@email.com">
-          <button type="submit" data-i18n="form.cta">Me prévenir à l'ouverture</button>
-        </form>
-        <div class="msg" id="msg-hero" role="status" aria-live="polite"></div>
+        <div class="dl-row">
+          <a class="dl" href="/beta/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-5-5m5 5 5-5M5 20h14"/></svg><span data-i18n="dl.cta">Télécharger la bêta</span></a>
+          <a class="dl-guide" href="/beta/#install" data-i18n="dl.guide">Guide d'installation</a>
+        </div>
         <div class="reassure">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="re.1">Un e-mail à l'ouverture de la bêta</span></span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="re.2">Jamais revendu, pas de pub</span></span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="re.3">Désinscription en un clic</span></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="re.1">Gratuit</span></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="re.2">macOS 14 ou plus</span></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="re.3">Mises à jour automatiques</span></span>
         </div>
       </div>
 
@@ -284,16 +293,16 @@ footer a{color:var(--foam);text-decoration:none} footer a:hover{text-decoration:
         <p style="color:var(--mist);margin:0" data-i18n="m.p">Je développe Dofin seul, parce que je voulais jouer à toute ma collection sur Mac sans jongler entre dix applis. Je partage chaque étape sur YouTube, des galères aux nouveautés.</p>
         <div class="channels">
           <a href="https://www.youtube.com/@Dofinapp" rel="noopener"><svg width="20" height="14" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="5" fill="#ff0033"/><path d="M11 6l7 4-7 4z" fill="#fff"/></svg><span data-i18n="m.yt">La chaîne YouTube</span></a>
-          <span data-i18n="m.discord">Discord : bientôt</span>
+          <a href="https://discord.gg/fGBWYhb4S" rel="noopener"><svg width="20" height="16" viewBox="0 0 24 18" aria-hidden="true"><path fill="#5865f2" d="M20.3 1.5A19.8 19.8 0 0 0 15.4 0l-.6 1.3a18.4 18.4 0 0 0-5.6 0L8.6 0a19.8 19.8 0 0 0-4.9 1.5C.6 6.2-.3 10.8.1 15.3a20 20 0 0 0 6 3l1.3-2.1c-.7-.3-1.4-.6-2-1l.5-.4a14.2 14.2 0 0 0 12.2 0l.5.4c-.6.4-1.3.7-2 1l1.3 2.1a20 20 0 0 0 6-3c.5-5.2-.8-9.8-3.6-13.8zM8 12.6c-1.2 0-2.2-1.1-2.2-2.4S6.8 7.8 8 7.8s2.2 1.1 2.2 2.4S9.2 12.6 8 12.6zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4z"/></svg><span data-i18n="m.discord">Le Discord</span></a>
         </div>
       </div>
       <div class="card">
         <div class="kicker" data-i18n="t.kicker">Nos engagements</div>
         <ul class="facts" style="margin-top:16px">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.1">Dofin est une app Mac native, gratuite. Plus tard, des thèmes et cosmétiques en option financeront le projet.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.1">Dofin est une app Mac native et gratuite, financée uniquement par les dons de ceux qui veulent la soutenir.</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.2">Aucun jeu, BIOS ni firmware fourni : tu utilises uniquement les copies que tu possèdes.</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.3">Tes jeux restent sur ton Mac. Dofin n'envoie rien sur Internet.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.4">Ton e-mail sert uniquement à te prévenir de la bêta et des nouvelles versions.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.4">Si tu t'inscris aux nouveautés, ton e-mail sert uniquement à ça.</span></li>
         </ul>
       </div>
     </div>
@@ -303,12 +312,12 @@ footer a{color:var(--foam);text-decoration:none} footer a:hover{text-decoration:
     <div class="wrap faq">
       <div class="kicker">FAQ</div>
       <h2 data-i18n="q.title">Questions fréquentes</h2>
-      <details><summary data-i18n="q1">Dofin est-il gratuit ?</summary><p data-i18n="a1">Oui. Toutes les fonctions pour jouer sont gratuites. Plus tard, une version Pro proposera des thèmes, des animations et des cosmétiques de profil pour soutenir le projet.</p></details>
+      <details><summary data-i18n="q1">Dofin est-il gratuit ?</summary><p data-i18n="a1">Oui, entièrement. Dofin est développé par un étudiant sur son temps libre et vit grâce aux dons, sans pub ni abonnement.</p></details>
       <details><summary data-i18n="q2">Sur quel Mac ça marche ?</summary><p data-i18n="a2">Sur les Mac Apple Silicon (M1 et plus récents), avec macOS 14 Sonoma ou plus récent.</p></details>
       <details><summary data-i18n="q3">Quelles consoles sont prises en charge ?</summary><p data-i18n="a3">Plus de 30 consoles, de l'Atari 2600 à la PlayStation 4, en passant par la NES, la Mega Drive, la PS2, la GameCube, la Wii U et bien d'autres. Chacune tourne dans un émulateur gratuit que Dofin t'aide à installer.</p></details>
       <details><summary data-i18n="q4">Dofin fournit-il des jeux ?</summary><p data-i18n="a4">Non. Dofin est une app qui organise et lance des jeux. Tu utilises uniquement les copies de jeux que tu possèdes.</p></details>
-      <details><summary data-i18n="q5">Quand sort la bêta ?</summary><p data-i18n="a5">Bientôt. Les inscrits sont prévenus en premier, par un seul e-mail, avec le lien de téléchargement.</p></details>
-      <details><summary data-i18n="q6">Que faites-vous de mon e-mail ?</summary><p data-i18n="a6">Il sert uniquement à te prévenir de la bêta et des nouvelles versions. Il n'est jamais revendu ni partagé. Chaque e-mail contient un lien de désinscription, et tu peux demander la suppression de tes données à tout moment.</p></details>
+      <details><summary data-i18n="q5">Pourquoi macOS bloque Dofin à la première ouverture ?</summary><p data-i18n="a5">Dofin n'est pas encore certifié par Apple (la certification coûte 99 € par an). Il suffit de l'autoriser une fois dans Réglages Système → Confidentialité et sécurité. Le <a href="/beta/#install">guide d'installation</a> te montre comment, en quatre étapes.</p></details>
+      <details><summary data-i18n="q6">Que faites-vous de mon e-mail ?</summary><p data-i18n="a6">Il sert uniquement à t'annoncer les nouvelles versions et les grandes nouveautés. Il n'est jamais revendu ni partagé. Chaque e-mail contient un lien de désinscription, et tu peux demander la suppression de tes données à tout moment.</p></details>
     </div>
   </section>
 
@@ -316,14 +325,16 @@ footer a{color:var(--foam);text-decoration:none} footer a:hover{text-decoration:
     <div class="wrap">
       <div class="final">
         <div>
-          <h2 data-i18n="end.title">Sois parmi les premiers à jouer</h2>
-          <p style="color:var(--mist);margin:0" data-i18n="end.p">Inscris-toi, et reçois le lien de la bêta dès son ouverture.</p>
+          <h2 data-i18n="end.title">Prêt à jouer ?</h2>
+          <p style="color:var(--mist);margin:0 0 22px" data-i18n="end.p">La bêta est gratuite et ouverte à tous. Télécharge-la, installe-la en deux minutes, et viens nous dire ce que tu en penses sur le Discord.</p>
+          <a class="dl" href="/beta/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-5-5m5 5 5-5M5 20h14"/></svg><span data-i18n="dl.cta">Télécharger la bêta</span></a>
         </div>
         <div>
+          <p class="news-label" data-i18n="news.label">Reçois les grandes nouveautés par e-mail</p>
           <form class="signup" id="signup-end" novalidate>
             <label for="email-end" style="position:absolute;left:-9999px" data-i18n="form.label">Ton adresse e-mail</label>
             <input id="email-end" type="email" autocomplete="email" required data-i18n-ph="form.ph" placeholder="ton@email.com">
-            <button type="submit" data-i18n="form.cta2">M'inscrire</button>
+            <button type="submit" data-i18n="form.cta2">Me tenir au courant</button>
           </form>
           <div class="msg" id="msg-end" role="status" aria-live="polite"></div>
         </div>
@@ -338,19 +349,20 @@ footer a{color:var(--foam);text-decoration:none} footer a:hover{text-decoration:
       <span>© 2026 Dofin · <span data-i18n="ft.by">Créé par Ilan Canlers</span></span>
       <span><a href="https://www.youtube.com/@Dofinapp" rel="noopener">YouTube</a> · <a href="mailto:hello@dofinapp.com">Contact</a> · <a href="#privacy" data-i18n="ft.priv">Confidentialité</a></span>
     </div>
-    <p class="privacy" id="privacy" data-i18n="ft.privtext">Confidentialité : l'adresse e-mail que tu donnes ici sert uniquement à t'informer de la bêta et des nouvelles versions de Dofin. Elle n'est jamais vendue ni partagée avec des tiers. Tu peux te désinscrire à tout moment grâce au lien présent dans chaque e-mail, ou demander l'accès et la suppression de tes données. Dofin n'est affilié à aucun fabricant de consoles ; les marques citées appartiennent à leurs propriétaires.</p>
+    <p class="privacy" id="privacy" data-i18n="ft.privtext">Confidentialité : l'adresse e-mail que tu donnes ici sert uniquement à t'informer des nouvelles versions de Dofin. Elle n'est jamais vendue ni partagée avec des tiers. Tu peux te désinscrire à tout moment grâce au lien présent dans chaque e-mail, ou demander l'accès et la suppression de tes données. Dofin n'est affilié à aucun fabricant de consoles ; les marques citées appartiennent à leurs propriétaires.</p>
   </div>
 </footer>
 
 <script>
 const T = {
  en: {
-  "nav.features":"Features","nav.faq":"FAQ",
-  "hero.pill":"Mac beta · sign-ups open",
+  "nav.features":"Features","nav.faq":"FAQ","nav.dl":"Download",
+  "dl.cta":"Download the beta","dl.guide":"Installation guide","news.label":"Get the big news by email",
+  "hero.pill":"Free beta · out now",
   "hero.title":"Every console.<br><em>One Mac.</em>",
   "hero.lead":"Dofin keeps all your games in one library, finds the right console and starts each one in the right emulator. Then you play with a controller, from the couch.",
-  "form.label":"Your email address","form.ph":"you@email.com","form.cta":"Notify me at launch","form.cta2":"Sign me up",
-  "re.1":"One email when the beta opens","re.2":"Never sold, no ads","re.3":"Unsubscribe in one click",
+  "form.label":"Your email address","form.ph":"you@email.com","form.cta":"Notify me at launch","form.cta2":"Keep me posted",
+  "re.1":"Free","re.2":"macOS 14 or later","re.3":"Automatic updates",
   "tv.games":"Games","tv.fav":"Favorites","tv.profile":"Profile","tv.playing":"PLAYING","tv.a":"Play","tv.x":"Favorite",
   "f.kicker":"What Dofin does","f.title":"A living-room console, inside your Mac",
   "f.intro":"Dofin doesn't replace your emulators: it brings them together, sets them up and makes them as easy as a console.",
@@ -367,22 +379,22 @@ const T = {
   "s3.t":"Grab the controller","s3.p":"Menu for Big Picture, A to play. That's it.",
   "m.kicker":"Who makes Dofin","m.role":"Independent developer, France",
   "m.p":"I build Dofin on my own, because I wanted to play my whole collection on a Mac without juggling ten apps. I share every step on YouTube, the struggles and the new features.",
-  "m.yt":"The YouTube channel","m.discord":"Discord: coming soon",
+  "m.yt":"The YouTube channel","m.discord":"The Discord",
   "t.kicker":"Our commitments",
-  "t.1":"Dofin is a native Mac app, free to use. Later, optional themes and cosmetics will fund the project.",
+  "t.1":"Dofin is a native Mac app, free, funded only by donations from people who want to support it.",
   "t.2":"No games, BIOS or firmware provided: you only use copies you own.",
   "t.3":"Your games stay on your Mac. Dofin doesn't upload anything.",
-  "t.4":"Your email is only used to tell you about the beta and new versions.",
+  "t.4":"If you sign up for news, your email is only used for that.",
   "q.title":"Frequently asked questions",
-  "q1":"Is Dofin free?","a1":"Yes. Everything you need to play is free. Later, a Pro version will offer themes, animations and profile cosmetics to support the project.",
+  "q1":"Is Dofin free?","a1":"Yes, completely. Dofin is built by a student in his spare time and runs on donations, with no ads or subscription.",
   "q2":"Which Macs does it run on?","a2":"Apple Silicon Macs (M1 and newer), with macOS 14 Sonoma or later.",
   "q3":"Which consoles are supported?","a3":"Over 30 consoles, from the Atari 2600 to the PlayStation 4, including the NES, Mega Drive, PS2, GameCube, Wii U and many more. Each runs in a free emulator that Dofin helps you install.",
   "q4":"Does Dofin provide games?","a4":"No. Dofin organizes and starts games. You only use copies of games you own.",
-  "q5":"When does the beta open?","a5":"Soon. People on the list hear first, in a single email with the download link.",
-  "q6":"What do you do with my email?","a6":"It's only used to tell you about the beta and new versions. It's never sold or shared. Every email has an unsubscribe link, and you can ask for your data to be deleted at any time.",
-  "end.title":"Be among the first to play","end.p":"Sign up and get the beta link as soon as it opens.",
+  "q5":"Why does macOS block Dofin the first time?","a5":"Dofin isn't certified by Apple yet (the certification costs $99 a year). You just need to allow it once in System Settings → Privacy & Security. The <a href=\"/beta/#install\">installation guide</a> shows you how, in four steps.",
+  "q6":"What do you do with my email?","a6":"It's only used to tell you about new versions and big news. It's never sold or shared. Every email has an unsubscribe link, and you can ask for your data to be deleted at any time.",
+  "end.title":"Ready to play?","end.p":"The beta is free and open to everyone. Download it, install it in two minutes, and come tell us what you think on Discord.",
   "ft.by":"Made by Ilan Canlers","ft.priv":"Privacy",
-  "ft.privtext":"Privacy: the email address you give here is only used to tell you about the Dofin beta and new versions. It is never sold or shared with third parties. You can unsubscribe at any time with the link in every email, or ask to access and delete your data. Dofin is not affiliated with any console maker; the brands mentioned belong to their owners.",
+  "ft.privtext":"Privacy: the email address you give here is only used to tell you about new Dofin versions. It is never sold or shared with third parties. You can unsubscribe at any time with the link in every email, or ask to access and delete your data. Dofin is not affiliated with any console maker; the brands mentioned belong to their owners.",
   "ok":"Almost there! Check your inbox (and your spam folder) and click the link to confirm.","bad":"That email doesn't look right. Check it and try again.","off":"Sign-up opens with the site's launch."
  },
  fr: {}
@@ -391,7 +403,7 @@ const T = {
 document.querySelectorAll("[data-i18n]").forEach(e=>T.fr[e.dataset.i18n]=e.textContent);
 document.querySelectorAll("[data-i18n-html]").forEach(e=>T.fr[e.dataset.i18nHtml]=e.innerHTML);
 document.querySelectorAll("[data-i18n-ph]").forEach(e=>T.fr[e.dataset.i18nPh]=e.placeholder);
-document.querySelectorAll("[data-i18n]").forEach(e=>{ if(/<span class="btn-k/.test(e.innerHTML)) T.fr[e.dataset.i18n]=e.innerHTML; });
+document.querySelectorAll("[data-i18n]").forEach(e=>{ if(e.children.length) T.fr[e.dataset.i18n]=e.innerHTML; });
 Object.assign(T.fr,{"ok":"Presque fini ! Vérifie ta boîte mail (et tes spams) et clique sur le lien pour confirmer.","bad":"Cette adresse ne semble pas valide. Vérifie-la et réessaie.","off":"Les inscriptions ouvriront avec la mise en ligne du site."});
 
 let lang="fr";
@@ -427,7 +439,7 @@ function wire(formId,msgId){
     finally{ btn.disabled=false; }
   });
 }
-wire("signup-hero","msg-hero"); wire("signup-end","msg-end");
+wire("signup-end","msg-end");
 </script>
 </body>
 </html>
