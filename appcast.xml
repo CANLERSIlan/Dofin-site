@@ -7,6 +7,15 @@
     <language>en</language>
     <!-- Each new version goes on top, as an <item>: its notes (one <ul> per language), version and signed download. -->
     <item>
+      <title>Dofin 0.9.1</title>
+      <pubDate>Mon, 02 Nov 2026 19:31:22 +0000</pubDate>
+      <sparkle:version>5</sparkle:version>
+      <sparkle:shortVersionString>0.9.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul lang="fr"><li>Statistiques anonymes, une fois par jour, pour savoir quoi améliorer en priorité (désactivables dans Réglages → Général → Confidentialité, avec le détail de ce qui est envoyé)</li><li>Petites corrections et finitions</li></ul><ul lang="en"><li>Anonymous statistics, once a day, to know what to improve first (can be turned off in Settings → General → Privacy, with the details of what is sent)</li><li>Small fixes and polish</li></ul>]]></description>
+      <enclosure url="https://dofinapp.com/downloads/Dofin-0.9.1.dmg" sparkle:edSignature="ATWpMjxGdMWE7zNc+RiB2gjqWtoOuumoqo2NNyn/DHau+bYbXGp+juCcpLi3NoXuMQGghuvRpyYS2zsyhnzLAQ==" length="7601301" type="application/octet-stream"/>
+    </item>
+    <item>
       <title>Dofin 0.9</title>
       <pubDate>Mon, 02 Nov 2026 13:20:00 +0000</pubDate>
       <sparkle:version>4</sparkle:version>
