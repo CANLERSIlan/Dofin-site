@@ -301,7 +301,7 @@ footer a{color:var(--foam);text-decoration:none} footer a:hover{text-decoration:
         <ul class="facts" style="margin-top:16px">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.1">Dofin est une app Mac native et gratuite, financée uniquement par les dons de ceux qui veulent la soutenir.</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.2">Aucun jeu, BIOS ni firmware fourni : tu utilises uniquement les copies que tu possèdes.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.3">Tes jeux restent sur ton Mac. Dofin n'envoie rien sur Internet.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.3">Tes jeux restent sur ton Mac. Dofin envoie seulement des statistiques anonymes, une fois par jour, que tu peux couper dans les Réglages.</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.4">Si tu t'inscris aux nouveautés, ton e-mail sert uniquement à ça.</span></li>
         </ul>
       </div>
@@ -349,7 +349,7 @@ footer a{color:var(--foam);text-decoration:none} footer a:hover{text-decoration:
       <span>© 2026 Dofin · <span data-i18n="ft.by">Créé par Ilan Canlers</span></span>
       <span><a href="https://www.youtube.com/@Dofinapp" rel="noopener">YouTube</a> · <a href="mailto:hello@dofinapp.com">Contact</a> · <a href="#privacy" data-i18n="ft.priv">Confidentialité</a></span>
     </div>
-    <p class="privacy" id="privacy" data-i18n="ft.privtext">Confidentialité : l'adresse e-mail que tu donnes ici sert uniquement à t'informer des nouvelles versions de Dofin. Elle n'est jamais vendue ni partagée avec des tiers. Tu peux te désinscrire à tout moment grâce au lien présent dans chaque e-mail, ou demander l'accès et la suppression de tes données. Dofin n'est affilié à aucun fabricant de consoles ; les marques citées appartiennent à leurs propriétaires.</p>
+    <p class="privacy" id="privacy" data-i18n="ft.privtext">Confidentialité : l'adresse e-mail que tu donnes ici sert uniquement à t'informer des nouvelles versions de Dofin. Elle n'est jamais vendue ni partagée avec des tiers. Le site compte les visites sans cookie et sans garder ton adresse IP, et l'app envoie une fois par jour des statistiques anonymes (version, Mac, temps de jeu par console), désactivables dans ses Réglages. Tu peux te désinscrire à tout moment grâce au lien présent dans chaque e-mail, ou demander l'accès et la suppression de tes données. Dofin n'est affilié à aucun fabricant de consoles ; les marques citées appartiennent à leurs propriétaires.</p>
   </div>
 </footer>
 
@@ -383,7 +383,7 @@ const T = {
   "t.kicker":"Our commitments",
   "t.1":"Dofin is a native Mac app, free, funded only by donations from people who want to support it.",
   "t.2":"No games, BIOS or firmware provided: you only use copies you own.",
-  "t.3":"Your games stay on your Mac. Dofin doesn't upload anything.",
+  "t.3":"Your games stay on your Mac. Dofin only sends anonymous statistics once a day, which you can turn off in Settings.",
   "t.4":"If you sign up for news, your email is only used for that.",
   "q.title":"Frequently asked questions",
   "q1":"Is Dofin free?","a1":"Yes, completely. Dofin is built by a student in his spare time and runs on donations, with no ads or subscription.",
@@ -394,7 +394,7 @@ const T = {
   "q6":"What do you do with my email?","a6":"It's only used to tell you about new versions and big news. It's never sold or shared. Every email has an unsubscribe link, and you can ask for your data to be deleted at any time.",
   "end.title":"Ready to play?","end.p":"The beta is free and open to everyone. Download it, install it in two minutes, and come tell us what you think on Discord.",
   "ft.by":"Made by Ilan Canlers","ft.priv":"Privacy",
-  "ft.privtext":"Privacy: the email address you give here is only used to tell you about new Dofin versions. It is never sold or shared with third parties. You can unsubscribe at any time with the link in every email, or ask to access and delete your data. Dofin is not affiliated with any console maker; the brands mentioned belong to their owners.",
+  "ft.privtext":"Privacy: the email address you give here is only used to tell you about new Dofin versions. It is never sold or shared with third parties. The site counts visits without cookies and without keeping your IP address, and the app sends anonymous statistics once a day (version, Mac, play time per console), which can be turned off in its Settings. You can unsubscribe at any time with the link in every email, or ask to access and delete your data. Dofin is not affiliated with any console maker; the brands mentioned belong to their owners.",
   "ok":"Almost there! Check your inbox (and your spam folder) and click the link to confirm.","bad":"That email doesn't look right. Check it and try again.","off":"Sign-up opens with the site's launch."
  },
  fr: {}
@@ -440,6 +440,10 @@ function wire(formId,msgId){
   });
 }
 wire("signup-end","msg-end");
+</script>
+<script>
+// Anonymous visit count (no cookie, no IP stored): see stats.dofinapp.com.
+try { navigator.sendBeacon("https://dofin-stats.canlersilan1.workers.dev/v", JSON.stringify({ p: location.pathname, r: document.referrer })); } catch (e) {}
 </script>
 </body>
 </html>
