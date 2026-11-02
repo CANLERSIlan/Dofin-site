@@ -6,5 +6,14 @@
     <description>Dofin updates</description>
     <language>en</language>
     <!-- Each new version goes on top, as an <item>: its notes (one <ul> per language), version and signed download. -->
+    <item>
+      <title>Dofin 0.9</title>
+      <pubDate>Mon, 02 Nov 2026 13:20:00 +0000</pubDate>
+      <sparkle:version>4</sparkle:version>
+      <sparkle:shortVersionString>0.9</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul lang="fr"><li>Première bêta publique de Dofin : merci de la tester !</li><li>Toutes tes consoles dans une seule bibliothèque, chaque jeu lancé dans le bon émulateur</li><li>Big Picture : toute l'appli à la manette, comme une console de salon</li><li>Menu en jeu (View + Menu) : sauvegarde rapide, captures, réglages du jeu, quitter</li><li>Bouton Share : une capture en un clic, rangée par jeu dans ton Profil</li><li>Mises à jour automatiques : les prochaines versions s'installent en un clic</li></ul><ul lang="en"><li>Dofin's first public beta: thanks for testing it!</li><li>All your consoles in one library, each game started in the right emulator</li><li>Big Picture: the whole app with a controller, like a living-room console</li><li>In-game menu (View + Menu): quick save, screenshots, game settings, quit</li><li>Share button: a screenshot in one press, sorted by game in your Profile</li><li>Automatic updates: the next versions install in one click</li></ul>]]></description>
+      <enclosure url="https://dofinapp.com/downloads/Dofin-0.9.dmg" sparkle:edSignature="4/UurBpSv8JAmJ+XnV/FHIs2zWTjT5S82wu2NE21TvJjDcxACVoLRrh7oNYdNFdlYAwxJH9GH3vU/tGNa6yhAg==" length="7569140" type="application/octet-stream"/>
+    </item>
   </channel>
 </rss>
