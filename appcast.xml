@@ -7,6 +7,15 @@
     <language>en</language>
     <!-- Each new version goes on top, as an <item>: its notes (one <ul> per language), version and signed download. -->
     <item>
+      <title>Dofin 0.10</title>
+      <pubDate>Wed, 04 Nov 2026 18:38:28 +0000</pubDate>
+      <sparkle:version>6</sparkle:version>
+      <sparkle:shortVersionString>0.10</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul lang="fr"><li>Nintendo Switch 2 : les jeux Switch 2 se recompilent en applis Mac natives avec nxnative, à partir du dossier du jeu extrait de ta propre console (pas besoin de prod.keys). Premier jeu jouable : Donkey Kong Bananza. Mac uniquement pour l'instant</li><li>Nouvelle console « Nintendo Switch 2 » dans la bibliothèque, séparée de la Switch</li><li>Menu en jeu au clavier : ⌃ Échap ouvre le menu par-dessus le jeu, même sans manette</li><li>Correction : la mémoire utilisée montait sans arrêt avec une grosse bibliothèque, jusqu'à la fermeture de Dofin. Les jaquettes sont maintenant chargées à la bonne taille et libérées</li><li>Les signalements de bug indiquent la puce et la mémoire du Mac</li><li>Petites corrections et finitions</li></ul><ul lang="en"><li>Nintendo Switch 2: Switch 2 games are rebuilt into native Mac apps with nxnative, from the game's folder dumped from your own console (no prod.keys needed). First playable game: Donkey Kong Bananza. Mac only for now</li><li>New "Nintendo Switch 2" console in the library, separate from the Switch</li><li>In-game menu from the keyboard: ⌃ Esc opens the menu over the game, even without a controller</li><li>Fix: memory use kept growing with a big library until Dofin closed. Covers now load at the right size and are let go</li><li>Bug reports include the Mac's chip and memory</li><li>Small fixes and polish</li></ul>]]></description>
+      <enclosure url="https://dofinapp.com/downloads/Dofin-0.10.dmg" sparkle:edSignature="dkJfhd+O8XkhZY4YrPtdJeUQRis8FicpqmKdIN09BZznjg7iuVqaXIhMjBzbK4buUlWrLxLpEwTmbMeb68nYBQ==" length="7644956" type="application/octet-stream"/>
+    </item>
+    <item>
       <title>Dofin 0.9.1</title>
       <pubDate>Mon, 02 Nov 2026 19:31:22 +0000</pubDate>
       <sparkle:version>5</sparkle:version>
