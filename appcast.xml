@@ -7,6 +7,15 @@
     <language>en</language>
     <!-- Each new version goes on top, as an <item>: its notes (one <ul> per language), version and signed download. -->
     <item>
+      <title>Dofin 0.10.1</title>
+      <pubDate>Wed, 04 Nov 2026 21:56:48 +0000</pubDate>
+      <sparkle:version>8</sparkle:version>
+      <sparkle:shortVersionString>0.10.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul lang="fr"><li>Correction : la mise à jour de nxnative échouait chez certains (« Échec de la mise à jour »), et les jeux Switch 2 demandaient alors des prod.keys. Dofin répare maintenant ça tout seul</li><li>« Tout installer » (Switch) marche aussi sur les Mac sans Xcode ou avec un vieux Python : Dofin ouvre la page de Xcode sur l'App Store, installe un Python assez récent (3.12+, exigé par les jeux Switch 2) et tous les modules demandés par nxnative (dont backports.zstd et capstone 5), et la vérification les contrôle tous</li><li>Correction : un jeu Switch qui venait de finir de compiler n'apparaissait pas dans la bibliothèque</li><li>Les mises à jour de Dofin arrivent plus vite : vérification toutes les heures au lieu d'une fois par jour</li><li>L'alerte « Un jeu est en cours de compilation » est traduite en français</li></ul><ul lang="en"><li>Fix: updating nxnative failed for some players ("Update failed"), and Switch 2 games then asked for prod.keys. Dofin now repairs this by itself</li><li>"Install everything" (Switch) now also works on Macs without Xcode or with an old Python: Dofin opens Xcode's App Store page, installs a recent enough Python (3.12+, needed for Switch 2 games) and every module nxnative asks for (including backports.zstd and capstone 5), and the check now looks for all of them</li><li>Fix: a Switch game that just finished building didn't show up in the library</li><li>Dofin updates arrive faster: checked every hour instead of once a day</li><li>The "A game is being built" alert is translated into French</li></ul>]]></description>
+      <enclosure url="https://dofinapp.com/downloads/Dofin-0.10.1.dmg" sparkle:edSignature="PQqYzeVZFZpAuHzjxj00k+XvdVBdgozcQvtQ7r3ojyrkmuyzmA9nYMklTnjzLr7q2o5OB2lD0uem6Lz00GaIBg==" length="7652077" type="application/octet-stream"/>
+    </item>
+    <item>
       <title>Dofin 0.10</title>
       <pubDate>Wed, 04 Nov 2026 18:38:28 +0000</pubDate>
       <sparkle:version>6</sparkle:version>
