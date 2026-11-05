@@ -45,6 +45,9 @@ nav .links a:hover{color:var(--foam);background:rgba(255,255,255,.05)}
 .lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px}
 .lang button{all:unset;cursor:pointer;font-size:13px;font-weight:700;color:var(--mist);padding:4px 10px;border-radius:999px}
 .lang button[aria-pressed="true"]{background:var(--foam);color:var(--abyss)}
+.lang select{all:unset;cursor:pointer;font-size:13px;font-weight:700;color:var(--foam);padding:4px 26px 4px 12px;border-radius:999px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23b8c7e0' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 10px center}
+.lang select option{color:#111;background:#fff}
+.lang select:focus-visible{outline:2px solid var(--foam);outline-offset:2px}
 .yt{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:14px;padding:8px 14px;border-radius:999px;border:1px solid var(--line)}
 .yt svg{width:20px;height:14px}
 .yt:hover{border-color:rgba(255,255,255,.35)}
@@ -167,16 +170,30 @@ footer a{color:var(--foam);text-decoration:none} footer a:hover{text-decoration:
 @media (max-width:920px){
   .hero{grid-template-columns:1fr;gap:40px;padding-top:20px}
   .grid,.steps{grid-template-columns:1fr 1fr}
-  .maker,.final{grid-template-columns:1fr}
+  .maker,.final{grid-template-columns:minmax(0,1fr)}
   .pad{width:110px;right:-8px;bottom:-26px}
   nav .links a.hide-s{display:none}
 }
 @media (max-width:560px){
   .wrap{padding:0 16px}
   .grid,.steps{grid-template-columns:1fr}
-  .final{padding:28px}
+  .final{padding:28px 20px}
   nav{gap:10px}
   .yt .t{display:none}
+  .yt{display:none}
+  nav .links{gap:4px}
+  nav .links a{font-size:14px;padding:7px 10px}
+  .lang select{padding:4px 22px 4px 10px;background-position:right 8px center}
+}
+h1,h2,h3,p{overflow-wrap:break-word}
+nav .links a{white-space:nowrap}
+@media (max-width:440px){
+  nav .links a.nav-support{font-size:0}
+  nav .links a.nav-support::before{content:"💛";font-size:15px}
+}
+@media (max-width:340px){
+  nav .links a.nav-support{display:none}
+  a.dl{white-space:normal;max-width:100%}
 }
 </style>
 </head>
@@ -196,9 +213,8 @@ footer a{color:var(--foam);text-decoration:none} footer a:hover{text-decoration:
           <svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="5" fill="#ff0033"/><path d="M11 6l7 4-7 4z" fill="#fff"/></svg>
           <span class="t">YouTube</span>
         </a>
-        <div class="lang" role="group" aria-label="Language">
-          <button type="button" id="lang-fr" aria-pressed="true">FR</button>
-          <button type="button" id="lang-en" aria-pressed="false">EN</button>
+        <div class="lang">
+          <select id="langsel" aria-label="Language"><option value="fr">Français</option><option value="en">English</option><option value="it">Italiano</option><option value="de">Deutsch</option><option value="es">Español</option><option value="pt-BR">Português</option></select>
         </div>
       </div>
     </nav>
@@ -417,7 +433,331 @@ const T = {
   "ft.by":"Made by Ilan Canlers","ft.priv":"Privacy",
   "ft.privtext":"Privacy: the site doesn't ask you for any personal data. It counts visits without cookies and without keeping your IP address, and the app sends anonymous statistics once a day (version, Mac, play time per console, and the most played games added up for everyone, never linked to you), which can be turned off in its Settings. Dofin is not affiliated with any console maker; the brands mentioned belong to their owners."
  },
- fr: {}
+ fr: {},
+ "it": {
+  "nav.features":"Funzioni",
+  "nav.faq":"FAQ",
+  "nav.dl":"Scarica",
+  "nav.support":"💛 Sostieni",
+  "sup.kicker":"Sostieni Dofin",
+  "sup.title":"Dofin è gratuito. Vive grazie a te.",
+  "sup.p":"Sviluppo Dofin da solo, mentre studio. Una donazione paga i server, l'account sviluppatore Apple e il tempo dedicato alle nuove funzioni.",
+  "sup.p1":"Il tuo nome nei ringraziamenti dell'app, automaticamente",
+  "sup.p2":"Il ruolo dorato Supporter su Discord",
+  "sup.p3":"Le nuove versioni prima di tutti (abbonamento mensile)",
+  "sup.cta":"Sostieni su Ko-fi",
+  "sup.wall":"Grazie a loro",
+  "sup.you":"Il tuo nome qui?",
+  "dl.cta":"Scarica la beta",
+  "dl.guide":"Guida all'installazione",
+  "news.label":"Tutte le novità, in diretta su Discord",
+  "news.p":"Ogni aggiornamento viene annunciato lì, e Dofin si aggiorna da solo.",
+  "news.cta":"Unisciti al Discord",
+  "hero.pill":"Novità: i giochi Switch 2 sul tuo Mac",
+  "hero.title":"Ogni console.<br><em>Un solo Mac.</em>",
+  "hero.lead":"Dofin riunisce tutti i tuoi giochi in un'unica libreria, riconosce la console e avvia ognuno nell'emulatore giusto. Poi giochi con il controller, dal divano.",
+  "re.1":"Gratis",
+  "re.2":"macOS 14 o successivo",
+  "re.3":"Aggiornamenti automatici",
+  "tv.games":"Giochi",
+  "tv.fav":"Preferiti",
+  "tv.profile":"Profilo",
+  "tv.playing":"IN CORSO",
+  "tv.a":"Gioca",
+  "tv.x":"Preferito",
+  "f.kicker":"Cosa fa Dofin",
+  "f.title":"Una console da salotto, dentro il tuo Mac",
+  "f.intro":"Dofin non sostituisce i tuoi emulatori: li riunisce, li configura e li rende semplici come una console.",
+  "c1.t":"Una libreria che si ordina da sola",
+  "c1.p":"Trascina un gioco: Dofin riconosce la console, trova la copertina e lo mette al suo posto. Oltre 30 console, dall'Atari 2600 alla Switch 2.",
+  "c2.t":"Big Picture, con il controller",
+  "c2.p":"Premi Menu: tutta l'app diventa uno schermo da console per la tua TV. Fatto per il controller Xbox, senza mouse né tastiera.",
+  "c3.t":"Qualità e 60 FPS, gioco per gioco",
+  "c3.p":"Aumenta la risoluzione interna e attiva le patch 60 FPS della community quando esistono. Dofin le trova e le applica per te.",
+  "c4.t":"Screenshot con una pressione",
+  "c4.p":"Il tasto Condividi del controller cattura l'istante esatto, senza menu in mezzo. Tutto è ordinato gioco per gioco nel tuo profilo.",
+  "c5.t":"Un menu sopra ogni gioco",
+  "c5.p":"<span class=\"btn-k\" style=\"background:#3a4a6b\">View</span> + <span class=\"btn-k\" style=\"background:#3a4a6b\">Menu</span> in gioco: salva, carica, regola, torna a Dofin o esci, con il gioco in pausa.",
+  "c6.t":"Tutto in una cartella",
+  "c6.p":"Giochi, emulatori, copertine e tempo di gioco in un'unica cartella. Mettila su un SSD, collegalo a un altro Mac: tutto segue.",
+  "shot.cap":"Un vero screenshot di Dofin: la scheda Giochi. Tutta la tua libreria in un posto, dal NES alla Switch 2, con copertine e tempo di gioco.",
+  "s.kicker":"Come funziona",
+  "s.title":"Tre passaggi, poi giochi",
+  "s1.t":"Installa i tuoi emulatori",
+  "s1.p":"La scheda Essenziali li installa con un clic e controlla gli aggiornamenti.",
+  "s2.t":"Aggiungi i tuoi giochi",
+  "s2.p":"Trascina su Dofin le copie dei tuoi giochi: trova la console da solo.",
+  "s3.t":"Prendi il controller",
+  "s3.p":"Menu per Big Picture, A per giocare. Tutto qui.",
+  "m.kicker":"Chi fa Dofin",
+  "m.role":"Sviluppatore indipendente, Francia",
+  "m.p":"Sviluppo Dofin da solo, perché volevo giocare a tutta la mia collezione su un Mac senza destreggiarmi tra dieci app. Condivido ogni passo su YouTube, le difficoltà e le novità.",
+  "m.yt":"Il canale YouTube",
+  "m.discord":"Il Discord",
+  "t.kicker":"I nostri impegni",
+  "t.1":"Dofin è un'app nativa per Mac, gratuita, finanziata solo dalle donazioni di chi vuole sostenerla.",
+  "t.2":"Nessun gioco, BIOS o firmware fornito: usi solo copie che possiedi.",
+  "t.3":"I tuoi giochi restano sul tuo Mac. Dofin invia solo statistiche anonime una volta al giorno, disattivabili nelle Impostazioni.",
+  "q.title":"Domande frequenti",
+  "q1":"Dofin è gratuito?",
+  "a1":"Sì, completamente. Dofin è sviluppato da uno studente nel tempo libero e vive di donazioni, senza pubblicità né abbonamento.",
+  "q2":"Su quali Mac funziona?",
+  "a2":"Mac con Apple Silicon (M1 e successivi), con macOS 14 Sonoma o successivo. Dofin si apre anche sui Mac Intel, ma i giochi Switch e Switch 2 (e alcuni emulatori) richiedono un chip Apple.",
+  "q3":"Quali console sono supportate?",
+  "a3":"Oltre 30 console, dall'Atari 2600 alla Switch 2, tra cui NES, Mega Drive, PS2, GameCube, Wii U, PS4 e molte altre. Ognuna gira in un emulatore gratuito che Dofin ti aiuta a installare, tranne Switch e Switch 2: i loro giochi vengono ricompilati in vere app per Mac con nxnative (Switch 2: per cominciare Donkey Kong Bananza).",
+  "q4":"Dofin fornisce dei giochi?",
+  "a4":"No. Dofin organizza e avvia i giochi. Usi solo copie di giochi che possiedi.",
+  "q5":"Perché macOS blocca Dofin la prima volta?",
+  "a5":"Dofin non è ancora certificato da Apple (la certificazione costa 99 $ all'anno). Basta autorizzarlo una volta in Impostazioni di Sistema → Privacy e sicurezza. La <a href=\"/beta/#install\">guida all'installazione</a> ti mostra come, in quattro passaggi.",
+  "end.title":"Pronto a giocare?",
+  "end.p":"La beta è gratuita e aperta a tutti. Scaricala, installala in due minuti e vieni a dirci cosa ne pensi su Discord.",
+  "ft.by":"Creato da Ilan Canlers",
+  "ft.priv":"Privacy",
+  "ft.privtext":"Privacy: il sito non ti chiede alcun dato personale. Conta le visite senza cookie e senza conservare il tuo indirizzo IP, e l'app invia una volta al giorno statistiche anonime (versione, Mac, tempo di gioco per console e i giochi più giocati sommati per tutti, mai collegati a te), disattivabili nelle sue Impostazioni. Dofin non è affiliato ad alcun produttore di console; i marchi citati appartengono ai rispettivi proprietari."
+ },
+ "de": {
+  "nav.features":"Funktionen",
+  "nav.faq":"FAQ",
+  "nav.dl":"Download",
+  "nav.support":"💛 Spenden",
+  "sup.kicker":"Dofin unterstützen",
+  "sup.title":"Dofin ist kostenlos. Es lebt dank dir.",
+  "sup.p":"Ich entwickle Dofin allein, neben dem Studium. Eine Spende bezahlt die Server, das Apple-Entwicklerkonto und die Zeit für neue Funktionen.",
+  "sup.p1":"Dein Name automatisch in den Danksagungen der App",
+  "sup.p2":"Die goldene Supporter-Rolle auf Discord",
+  "sup.p3":"Neue Versionen vor allen anderen (monatliche Mitgliedschaft)",
+  "sup.cta":"Auf Ko-fi unterstützen",
+  "sup.wall":"Danke an sie",
+  "sup.you":"Dein Name hier?",
+  "dl.cta":"Beta herunterladen",
+  "dl.guide":"Installationsanleitung",
+  "news.label":"Alle Neuigkeiten, live auf Discord",
+  "news.p":"Jedes Update wird dort angekündigt, und Dofin aktualisiert sich selbst.",
+  "news.cta":"Dem Discord beitreten",
+  "hero.pill":"Neu: Switch-2-Spiele auf deinem Mac",
+  "hero.title":"Jede Konsole.<br><em>Ein Mac.</em>",
+  "hero.lead":"Dofin bündelt all deine Spiele in einer Bibliothek, erkennt die Konsole und startet jedes Spiel im richtigen Emulator. Dann spielst du mit dem Controller, vom Sofa aus.",
+  "re.1":"Kostenlos",
+  "re.2":"macOS 14 oder neuer",
+  "re.3":"Automatische Updates",
+  "tv.games":"Spiele",
+  "tv.fav":"Favoriten",
+  "tv.profile":"Profil",
+  "tv.playing":"AM SPIELEN",
+  "tv.a":"Spielen",
+  "tv.x":"Favorit",
+  "f.kicker":"Was Dofin macht",
+  "f.title":"Eine Wohnzimmerkonsole, in deinem Mac",
+  "f.intro":"Dofin ersetzt deine Emulatoren nicht: Es bringt sie zusammen, richtet sie ein und macht sie so einfach wie eine Konsole.",
+  "c1.t":"Eine Bibliothek, die sich selbst sortiert",
+  "c1.p":"Zieh ein Spiel hinein: Dofin erkennt die Konsole, findet das Cover und sortiert es ein. Über 30 Konsolen, vom Atari 2600 bis zur Switch 2.",
+  "c2.t":"Big Picture, mit dem Controller",
+  "c2.p":"Drück Menu: Die ganze App wird zu einem Konsolenbildschirm für deinen Fernseher. Für den Xbox-Controller gemacht, ohne Maus und Tastatur.",
+  "c3.t":"Qualität und 60 FPS, Spiel für Spiel",
+  "c3.p":"Erhöhe die interne Auflösung und aktiviere 60-FPS-Patches der Community, wo es sie gibt. Dofin findet sie und wendet sie für dich an.",
+  "c4.t":"Screenshots per Knopfdruck",
+  "c4.p":"Die Teilen-Taste des Controllers hält genau den Moment fest, ohne Menü dazwischen. Alles wird in deinem Profil nach Spiel sortiert.",
+  "c5.t":"Ein Menü über jedem Spiel",
+  "c5.p":"<span class=\"btn-k\" style=\"background:#3a4a6b\">View</span> + <span class=\"btn-k\" style=\"background:#3a4a6b\">Menu</span> im Spiel: speichern, laden, einstellen, zurück zu Dofin oder beenden, während das Spiel pausiert.",
+  "c6.t":"Alles in einem Ordner",
+  "c6.p":"Spiele, Emulatoren, Cover und Spielzeit in einem einzigen Ordner. Leg ihn auf eine SSD, schließ sie an einen anderen Mac an: Alles kommt mit.",
+  "shot.cap":"Ein echter Dofin-Screenshot: der Tab „Spiele“. Deine ganze Bibliothek an einem Ort, vom NES bis zur Switch 2, mit Covern und Spielzeit.",
+  "s.kicker":"So funktioniert's",
+  "s.title":"Drei Schritte, dann wird gespielt",
+  "s1.t":"Installiere deine Emulatoren",
+  "s1.p":"Der Tab „Grundlagen“ installiert sie mit einem Klick und sucht nach Updates.",
+  "s2.t":"Füge deine Spiele hinzu",
+  "s2.p":"Zieh deine eigenen Spielkopien auf Dofin: Es erkennt die Konsole selbst.",
+  "s3.t":"Schnapp dir den Controller",
+  "s3.p":"Menu für Big Picture, A zum Spielen. Das war's.",
+  "m.kicker":"Wer Dofin macht",
+  "m.role":"Unabhängiger Entwickler, Frankreich",
+  "m.p":"Ich entwickle Dofin allein, weil ich meine ganze Sammlung auf einem Mac spielen wollte, ohne zehn Apps zu jonglieren. Ich teile jeden Schritt auf YouTube, die Hürden und die neuen Funktionen.",
+  "m.yt":"Der YouTube-Kanal",
+  "m.discord":"Der Discord",
+  "t.kicker":"Unsere Versprechen",
+  "t.1":"Dofin ist eine native Mac-App, kostenlos und nur durch Spenden von Leuten finanziert, die es unterstützen möchten.",
+  "t.2":"Keine Spiele, BIOS oder Firmware enthalten: Du verwendest nur Kopien, die du besitzt.",
+  "t.3":"Deine Spiele bleiben auf deinem Mac. Dofin sendet nur einmal am Tag anonyme Statistiken, die du in den Einstellungen abschalten kannst.",
+  "q.title":"Häufige Fragen",
+  "q1":"Ist Dofin kostenlos?",
+  "a1":"Ja, komplett. Dofin wird von einem Studenten in seiner Freizeit entwickelt und lebt von Spenden, ohne Werbung und ohne Abo.",
+  "q2":"Auf welchen Macs läuft es?",
+  "a2":"Macs mit Apple Silicon (M1 und neuer), mit macOS 14 Sonoma oder neuer. Dofin startet auch auf Intel-Macs, aber Switch- und Switch-2-Spiele (und manche Emulatoren) brauchen einen Apple-Chip.",
+  "q3":"Welche Konsolen werden unterstützt?",
+  "a3":"Über 30 Konsolen, vom Atari 2600 bis zur Switch 2, darunter NES, Mega Drive, PS2, GameCube, Wii U, PS4 und viele mehr. Jede läuft in einem kostenlosen Emulator, bei dessen Installation Dofin hilft, außer Switch und Switch 2: Ihre Spiele werden mit nxnative zu echten Mac-Apps umgebaut (Switch 2: zunächst Donkey Kong Bananza).",
+  "q4":"Liefert Dofin Spiele mit?",
+  "a4":"Nein. Dofin organisiert und startet Spiele. Du verwendest nur Kopien von Spielen, die du besitzt.",
+  "q5":"Warum blockiert macOS Dofin beim ersten Mal?",
+  "a5":"Dofin ist noch nicht von Apple zertifiziert (die Zertifizierung kostet 99 $ pro Jahr). Du musst es nur einmal unter Systemeinstellungen → Datenschutz & Sicherheit erlauben. Die <a href=\"/beta/#install\">Installationsanleitung</a> zeigt dir in vier Schritten, wie.",
+  "end.title":"Bereit zum Spielen?",
+  "end.p":"Die Beta ist kostenlos und für alle offen. Lade sie herunter, installiere sie in zwei Minuten und sag uns auf Discord, was du davon hältst.",
+  "ft.by":"Gemacht von Ilan Canlers",
+  "ft.priv":"Datenschutz",
+  "ft.privtext":"Datenschutz: Die Website fragt dich nach keinen persönlichen Daten. Sie zählt Besuche ohne Cookies und ohne deine IP-Adresse zu speichern, und die App sendet einmal am Tag anonyme Statistiken (Version, Mac, Spielzeit pro Konsole und die meistgespielten Spiele, für alle zusammengezählt, nie mit dir verknüpft), die in ihren Einstellungen abgeschaltet werden können. Dofin ist mit keinem Konsolenhersteller verbunden; die genannten Marken gehören ihren Inhabern."
+ },
+ "es": {
+  "nav.features":"Funciones",
+  "nav.faq":"Preguntas",
+  "nav.dl":"Descargar",
+  "nav.support":"💛 Apoyar",
+  "sup.kicker":"Apoya Dofin",
+  "sup.title":"Dofin es gratis. Vive gracias a ti.",
+  "sup.p":"Desarrollo Dofin yo solo, mientras estudio. Una donación paga los servidores, la cuenta de desarrollador de Apple y el tiempo dedicado a las nuevas funciones.",
+  "sup.p1":"Tu nombre en los créditos de la app, automáticamente",
+  "sup.p2":"El rol dorado Supporter en Discord",
+  "sup.p3":"Las nuevas versiones antes que nadie (membresía mensual)",
+  "sup.cta":"Apoyar en Ko-fi",
+  "sup.wall":"Gracias a ellos",
+  "sup.you":"¿Tu nombre aquí?",
+  "dl.cta":"Descargar la beta",
+  "dl.guide":"Guía de instalación",
+  "news.label":"Todas las novedades, en directo en Discord",
+  "news.p":"Cada actualización se anuncia allí, y Dofin se actualiza solo.",
+  "news.cta":"Unirse al Discord",
+  "hero.pill":"Novedad: juegos de Switch 2 en tu Mac",
+  "hero.title":"Todas las consolas.<br><em>Un solo Mac.</em>",
+  "hero.lead":"Dofin reúne todos tus juegos en una sola biblioteca, reconoce la consola e inicia cada uno en el emulador adecuado. Luego juegas con mando, desde el sofá.",
+  "re.1":"Gratis",
+  "re.2":"macOS 14 o posterior",
+  "re.3":"Actualizaciones automáticas",
+  "tv.games":"Juegos",
+  "tv.fav":"Favoritos",
+  "tv.profile":"Perfil",
+  "tv.playing":"JUGANDO",
+  "tv.a":"Jugar",
+  "tv.x":"Favorito",
+  "f.kicker":"Lo que hace Dofin",
+  "f.title":"Una consola de salón, dentro de tu Mac",
+  "f.intro":"Dofin no sustituye a tus emuladores: los reúne, los configura y los hace tan fáciles como una consola.",
+  "c1.t":"Una biblioteca que se ordena sola",
+  "c1.p":"Arrastra un juego: Dofin reconoce la consola, encuentra la portada y lo coloca en su sitio. Más de 30 consolas, de la Atari 2600 a la Switch 2.",
+  "c2.t":"Big Picture, con mando",
+  "c2.p":"Pulsa Menu: toda la app se convierte en una pantalla de consola para tu tele. Hecha para el mando Xbox, sin ratón ni teclado.",
+  "c3.t":"Calidad y 60 FPS, juego por juego",
+  "c3.p":"Sube la resolución interna y activa los parches de 60 FPS de la comunidad cuando existen. Dofin los encuentra y los aplica por ti.",
+  "c4.t":"Capturas con una pulsación",
+  "c4.p":"El botón Compartir del mando captura el instante exacto, sin menús de por medio. Todo se ordena juego por juego en tu perfil.",
+  "c5.t":"Un menú sobre cada juego",
+  "c5.p":"<span class=\"btn-k\" style=\"background:#3a4a6b\">View</span> + <span class=\"btn-k\" style=\"background:#3a4a6b\">Menu</span> en el juego: guardar, cargar, ajustar, volver a Dofin o salir, con el juego en pausa.",
+  "c6.t":"Todo en una carpeta",
+  "c6.p":"Juegos, emuladores, portadas y tiempo de juego en una sola carpeta. Ponla en un SSD, conéctalo a otro Mac: todo te sigue.",
+  "shot.cap":"Una captura real de Dofin: la pestaña Juegos. Toda tu biblioteca en un solo lugar, de la NES a la Switch 2, con portadas y tiempo de juego.",
+  "s.kicker":"Cómo funciona",
+  "s.title":"Tres pasos y a jugar",
+  "s1.t":"Instala tus emuladores",
+  "s1.p":"La pestaña Esenciales los instala con un clic y busca actualizaciones.",
+  "s2.t":"Añade tus juegos",
+  "s2.p":"Arrastra a Dofin tus propias copias de juegos: encuentra la consola solo.",
+  "s3.t":"Coge el mando",
+  "s3.p":"Menu para Big Picture, A para jugar. Eso es todo.",
+  "m.kicker":"Quién hace Dofin",
+  "m.role":"Desarrollador independiente, Francia",
+  "m.p":"Desarrollo Dofin yo solo, porque quería jugar a toda mi colección en un Mac sin hacer malabares con diez apps. Comparto cada paso en YouTube, las dificultades y las novedades.",
+  "m.yt":"El canal de YouTube",
+  "m.discord":"El Discord",
+  "t.kicker":"Nuestros compromisos",
+  "t.1":"Dofin es una app nativa de Mac, gratis, financiada solo por las donaciones de quienes quieren apoyarla.",
+  "t.2":"No incluye juegos, BIOS ni firmware: solo usas copias que tienes.",
+  "t.3":"Tus juegos se quedan en tu Mac. Dofin solo envía estadísticas anónimas una vez al día, que puedes desactivar en Ajustes.",
+  "q.title":"Preguntas frecuentes",
+  "q1":"¿Dofin es gratis?",
+  "a1":"Sí, totalmente. Dofin lo desarrolla un estudiante en su tiempo libre y vive de donaciones, sin anuncios ni suscripción.",
+  "q2":"¿En qué Mac funciona?",
+  "a2":"En Mac con Apple Silicon (M1 y posteriores), con macOS 14 Sonoma o posterior. Dofin también se abre en Mac con Intel, pero los juegos de Switch y Switch 2 (y algunos emuladores) necesitan un chip de Apple.",
+  "q3":"¿Qué consolas son compatibles?",
+  "a3":"Más de 30 consolas, de la Atari 2600 a la Switch 2, entre ellas NES, Mega Drive, PS2, GameCube, Wii U, PS4 y muchas más. Cada una funciona en un emulador gratuito que Dofin te ayuda a instalar, salvo Switch y Switch 2: sus juegos se recompilan en verdaderas apps de Mac con nxnative (Switch 2: para empezar, Donkey Kong Bananza).",
+  "q4":"¿Dofin incluye juegos?",
+  "a4":"No. Dofin organiza e inicia los juegos. Solo usas copias de juegos que tienes.",
+  "q5":"¿Por qué macOS bloquea Dofin la primera vez?",
+  "a5":"Dofin aún no está certificado por Apple (la certificación cuesta 99 $ al año). Solo tienes que permitirlo una vez en Ajustes del Sistema → Privacidad y seguridad. La <a href=\"/beta/#install\">guía de instalación</a> te enseña cómo, en cuatro pasos.",
+  "end.title":"¿Listo para jugar?",
+  "end.p":"La beta es gratis y abierta a todos. Descárgala, instálala en dos minutos y ven a contarnos qué te parece en Discord.",
+  "ft.by":"Hecho por Ilan Canlers",
+  "ft.priv":"Privacidad",
+  "ft.privtext":"Privacidad: el sitio no te pide ningún dato personal. Cuenta las visitas sin cookies y sin guardar tu dirección IP, y la app envía una vez al día estadísticas anónimas (versión, Mac, tiempo de juego por consola y los juegos más jugados sumados para todos, nunca vinculados a ti), que se pueden desactivar en sus Ajustes. Dofin no está afiliado a ningún fabricante de consolas; las marcas citadas pertenecen a sus propietarios."
+ },
+ "pt-BR": {
+  "nav.features":"Recursos",
+  "nav.faq":"Perguntas",
+  "nav.dl":"Baixar",
+  "nav.support":"💛 Apoiar",
+  "sup.kicker":"Apoie o Dofin",
+  "sup.title":"O Dofin é gratuito. Ele vive graças a você.",
+  "sup.p":"Eu desenvolvo o Dofin sozinho, junto com os estudos. Uma doação paga os servidores, a conta de desenvolvedor da Apple e o tempo dedicado aos novos recursos.",
+  "sup.p1":"Seu nome nos créditos do app, automaticamente",
+  "sup.p2":"O cargo dourado Supporter no Discord",
+  "sup.p3":"As novas versões antes de todo mundo (assinatura mensal)",
+  "sup.cta":"Apoiar no Ko-fi",
+  "sup.wall":"Obrigado a eles",
+  "sup.you":"Seu nome aqui?",
+  "dl.cta":"Baixar o beta",
+  "dl.guide":"Guia de instalação",
+  "news.label":"Todas as novidades, ao vivo no Discord",
+  "news.p":"Cada atualização é anunciada lá, e o Dofin se atualiza sozinho.",
+  "news.cta":"Entrar no Discord",
+  "hero.pill":"Novidade: jogos de Switch 2 no seu Mac",
+  "hero.title":"Todos os consoles.<br><em>Um só Mac.</em>",
+  "hero.lead":"O Dofin reúne todos os seus jogos em uma só biblioteca, reconhece o console e inicia cada um no emulador certo. Depois você joga com controle, do sofá.",
+  "re.1":"Gratuito",
+  "re.2":"macOS 14 ou mais recente",
+  "re.3":"Atualizações automáticas",
+  "tv.games":"Jogos",
+  "tv.fav":"Favoritos",
+  "tv.profile":"Perfil",
+  "tv.playing":"JOGANDO",
+  "tv.a":"Jogar",
+  "tv.x":"Favorito",
+  "f.kicker":"O que o Dofin faz",
+  "f.title":"Um console de sala, dentro do seu Mac",
+  "f.intro":"O Dofin não substitui seus emuladores: ele os reúne, configura e deixa tudo tão fácil quanto um console.",
+  "c1.t":"Uma biblioteca que se organiza sozinha",
+  "c1.p":"Arraste um jogo: o Dofin reconhece o console, encontra a capa e guarda no lugar certo. Mais de 30 consoles, do Atari 2600 ao Switch 2.",
+  "c2.t":"Big Picture, com controle",
+  "c2.p":"Aperte Menu: o app inteiro vira uma tela de console para a sua TV. Feito para o controle Xbox, sem mouse nem teclado.",
+  "c3.t":"Qualidade e 60 FPS, jogo por jogo",
+  "c3.p":"Aumente a resolução interna e ative os patches de 60 FPS da comunidade quando existirem. O Dofin os encontra e aplica para você.",
+  "c4.t":"Capturas com um toque",
+  "c4.p":"O botão Compartilhar do controle captura o instante exato, sem menu no meio. Tudo fica organizado jogo por jogo no seu perfil.",
+  "c5.t":"Um menu por cima de cada jogo",
+  "c5.p":"<span class=\"btn-k\" style=\"background:#3a4a6b\">View</span> + <span class=\"btn-k\" style=\"background:#3a4a6b\">Menu</span> no jogo: salvar, carregar, ajustar, voltar ao Dofin ou sair, com o jogo pausado.",
+  "c6.t":"Tudo em uma pasta",
+  "c6.p":"Jogos, emuladores, capas e tempo de jogo em uma só pasta. Coloque em um SSD, conecte em outro Mac: tudo vai junto.",
+  "shot.cap":"Uma captura real do Dofin: a aba Jogos. Toda a sua biblioteca em um só lugar, do NES ao Switch 2, com capas e tempo de jogo.",
+  "s.kicker":"Como funciona",
+  "s.title":"Três passos, e é só jogar",
+  "s1.t":"Instale seus emuladores",
+  "s1.p":"A aba Essenciais os instala com um clique e procura atualizações.",
+  "s2.t":"Adicione seus jogos",
+  "s2.p":"Arraste suas próprias cópias de jogos para o Dofin: ele encontra o console sozinho.",
+  "s3.t":"Pegue o controle",
+  "s3.p":"Menu para o Big Picture, A para jogar. Só isso.",
+  "m.kicker":"Quem faz o Dofin",
+  "m.role":"Desenvolvedor independente, França",
+  "m.p":"Eu desenvolvo o Dofin sozinho, porque queria jogar toda a minha coleção em um Mac sem ficar alternando entre dez apps. Compartilho cada passo no YouTube, as dificuldades e as novidades.",
+  "m.yt":"O canal no YouTube",
+  "m.discord":"O Discord",
+  "t.kicker":"Nossos compromissos",
+  "t.1":"O Dofin é um app nativo para Mac, gratuito, financiado só pelas doações de quem quer apoiá-lo.",
+  "t.2":"Nenhum jogo, BIOS ou firmware incluído: você só usa cópias que tem.",
+  "t.3":"Seus jogos ficam no seu Mac. O Dofin só envia estatísticas anônimas uma vez por dia, que você pode desativar nos Ajustes.",
+  "q.title":"Perguntas frequentes",
+  "q1":"O Dofin é gratuito?",
+  "a1":"Sim, totalmente. O Dofin é feito por um estudante no tempo livre e vive de doações, sem anúncios nem assinatura.",
+  "q2":"Em quais Macs ele roda?",
+  "a2":"Macs com Apple Silicon (M1 e mais recentes), com macOS 14 Sonoma ou mais recente. O Dofin também abre em Macs Intel, mas os jogos de Switch e Switch 2 (e alguns emuladores) precisam de um chip da Apple.",
+  "q3":"Quais consoles são compatíveis?",
+  "a3":"Mais de 30 consoles, do Atari 2600 ao Switch 2, incluindo NES, Mega Drive, PS2, GameCube, Wii U, PS4 e muitos outros. Cada um roda em um emulador gratuito que o Dofin ajuda a instalar, exceto Switch e Switch 2: os jogos deles são recompilados em apps de verdade para Mac com o nxnative (Switch 2: começando por Donkey Kong Bananza).",
+  "q4":"O Dofin vem com jogos?",
+  "a4":"Não. O Dofin organiza e inicia os jogos. Você só usa cópias de jogos que tem.",
+  "q5":"Por que o macOS bloqueia o Dofin na primeira vez?",
+  "a5":"O Dofin ainda não é certificado pela Apple (a certificação custa US$ 99 por ano). Você só precisa permitir uma vez em Ajustes do Sistema → Privacidade e Segurança. O <a href=\"/beta/#install\">guia de instalação</a> mostra como, em quatro passos.",
+  "end.title":"Pronto para jogar?",
+  "end.p":"O beta é gratuito e aberto a todos. Baixe, instale em dois minutos e venha contar o que achou no Discord.",
+  "ft.by":"Feito por Ilan Canlers",
+  "ft.priv":"Privacidade",
+  "ft.privtext":"Privacidade: o site não pede nenhum dado pessoal. Ele conta as visitas sem cookies e sem guardar seu endereço IP, e o app envia uma vez por dia estatísticas anônimas (versão, Mac, tempo de jogo por console e os jogos mais jogados somados para todos, nunca ligados a você), que podem ser desativadas nos Ajustes dele. O Dofin não é afiliado a nenhum fabricante de consoles; as marcas citadas pertencem aos seus donos."
+ }
 };
 // French comes from the page itself.
 document.querySelectorAll("[data-i18n]").forEach(e=>T.fr[e.dataset.i18n]=e.textContent);
@@ -425,20 +765,27 @@ document.querySelectorAll("[data-i18n-html]").forEach(e=>T.fr[e.dataset.i18nHtml
 document.querySelectorAll("[data-i18n-ph]").forEach(e=>T.fr[e.dataset.i18nPh]=e.placeholder);
 document.querySelectorAll("[data-i18n]").forEach(e=>{ if(e.children.length) T.fr[e.dataset.i18n]=e.innerHTML; });
 
+function pickLang(){ for (const p of (navigator.languages||[navigator.language||"en"]).map(x=>x.toLowerCase())) { if (p.startsWith("fr")) return "fr"; if (p.startsWith("en")) return "en"; for (const l of ["it","de","es"]) if (p.startsWith(l)) return l; if (p.startsWith("pt")) return "pt-BR"; } return "en"; }
+const LANGS=["fr","en","it","de","es","pt-BR"];
 let lang="fr";
 function setLang(l){
+  if (!LANGS.includes(l)) l = "en";
   lang=l; document.documentElement.lang=l;
-  document.querySelectorAll("[data-i18n]").forEach(e=>{const v=T[l][e.dataset.i18n]; if(v==null)return; if(/</.test(v)) e.innerHTML=v; else e.textContent=v;});
-  document.querySelectorAll("[data-i18n-html]").forEach(e=>{const v=T[l][e.dataset.i18nHtml]; if(v!=null) e.innerHTML=v;});
-  document.querySelectorAll("[data-i18n-ph]").forEach(e=>{const v=T[l][e.dataset.i18nPh]; if(v!=null) e.placeholder=v;});
-  document.getElementById("lang-fr").setAttribute("aria-pressed",l==="fr");
-  document.getElementById("lang-en").setAttribute("aria-pressed",l==="en");
+  const D=T[l]||T.en, get=k=> l==="fr" ? T.fr[k] : (D[k] ?? T.en[k]);
+  document.querySelectorAll("[data-i18n]").forEach(e=>{const v=get(e.dataset.i18n); if(v==null)return; if(/</.test(v)) e.innerHTML=v; else e.textContent=v;});
+  document.querySelectorAll("[data-i18n-html]").forEach(e=>{const v=get(e.dataset.i18nHtml); if(v!=null) e.innerHTML=v;});
+  document.querySelectorAll("[data-i18n-ph]").forEach(e=>{const v=get(e.dataset.i18nPh); if(v!=null) e.placeholder=v;});
+  document.getElementById("langsel").value=l;
   try{localStorage.setItem("dofin-lang",l)}catch(_){}
 }
-document.getElementById("lang-fr").onclick=()=>setLang("fr");
-document.getElementById("lang-en").onclick=()=>setLang("en");
+document.getElementById("langsel").onchange=e=>setLang(e.target.value);
+// Narrow screens: the picker shows FR, EN, IT… instead of the full names.
+const NAMES={"fr":"Français","en":"English","it":"Italiano","de":"Deutsch","es":"Español","pt-BR":"Português"};
+const narrow=matchMedia("(max-width:440px)");
+function labelLangs(){ for (const o of document.getElementById("langsel").options) o.textContent = narrow.matches ? o.value.slice(0,2).toUpperCase() : NAMES[o.value]; }
+labelLangs(); try{ narrow.addEventListener("change", labelLangs); }catch(_){}
 let saved=null; try{saved=localStorage.getItem("dofin-lang")}catch(_){}
-setLang(saved || ((navigator.language||"fr").toLowerCase().startsWith("fr") ? "fr" : "en"));
+setLang(LANGS.includes(saved) ? saved : pickLang());
 </script>
 <script>
 // The donors' names, the same list as the app's "Thanks to them" (stats server first, the site's file if it's down).
