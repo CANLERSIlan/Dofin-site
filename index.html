@@ -65,6 +65,23 @@ h1 em{font-style:normal;background:linear-gradient(180deg,#7cc4ff,#2f8fff);-webk
 .dl-guide:hover{color:var(--foam)}
 nav .links a.nav-dl{background:var(--tide);color:#fff}
 nav .links a.nav-dl:hover{background:#4a9dff;color:#fff}
+nav .links a.nav-support{color:#f5c451;border:1px solid rgba(245,196,81,.45);background:rgba(245,196,81,.08)}
+nav .links a.nav-support:hover{background:rgba(245,196,81,.18);color:#ffd877}
+.support{position:relative;overflow:hidden;border-radius:28px;padding:44px;border:1px solid rgba(245,196,81,.35);
+  background:radial-gradient(90% 140% at 90% 0%,rgba(245,196,81,.20),transparent 60%),radial-gradient(70% 120% at 0% 100%,rgba(255,150,60,.10),transparent 60%),var(--deep);
+  display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center}
+.support h2{margin-top:0}
+.support .gold{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:19px;color:#1a1204;
+  padding:16px 30px;border-radius:999px;background:linear-gradient(90deg,#f5c451,#ff9a3c);box-shadow:0 12px 36px rgba(245,170,60,.45);transition:transform .15s}
+.support .gold:hover{transform:translateY(-2px)}
+.support .perks{list-style:none;padding:0;margin:18px 0 24px;display:grid;gap:8px;color:var(--mist)}
+.support .perks li::before{content:"💛 "}
+.wall{background:rgba(0,0,0,.22);border:1px solid rgba(245,196,81,.22);border-radius:20px;padding:22px}
+.wall h3{margin:0 0 12px;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:#f5c451}
+.names{display:flex;flex-wrap:wrap;gap:8px}
+.names span{padding:7px 13px;border-radius:999px;background:rgba(245,196,81,.12);border:1px solid rgba(245,196,81,.3);color:#ffe3a1;font-weight:700;font-size:14px}
+.names .you{background:none;border-style:dashed;color:var(--mist);font-weight:600}
+@media (max-width:860px){.support{grid-template-columns:1fr;padding:28px}}
 .news-label{font-weight:700;font-size:15px;margin:22px 0 10px;color:var(--foam)}
 .reassure{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;color:var(--mist);font-size:14px}
 .reassure span{display:inline-flex;align-items:center;gap:7px}
@@ -173,6 +190,7 @@ footer a{color:var(--foam);text-decoration:none} footer a:hover{text-decoration:
       <div class="links">
         <a class="hide-s" href="#features" data-i18n="nav.features">Fonctionnalités</a>
         <a class="hide-s" href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a class="nav-support" href="#support" data-i18n="nav.support">💛 Soutenir</a>
         <a class="nav-dl" href="/beta/" data-i18n="nav.dl">Télécharger</a>
         <a class="yt" href="https://www.youtube.com/@Dofinapp" rel="noopener">
           <svg viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="5" fill="#ff0033"/><path d="M11 6l7 4-7 4z" fill="#fff"/></svg>
@@ -297,6 +315,28 @@ footer a{color:var(--foam);text-decoration:none} footer a:hover{text-decoration:
     </div>
   </section>
 
+  <section id="support">
+    <div class="wrap">
+      <div class="support">
+        <div>
+          <div class="kicker" style="color:#f5c451" data-i18n="sup.kicker">Soutenir Dofin</div>
+          <h2 data-i18n="sup.title">Dofin est gratuit. Il vit grâce à vous.</h2>
+          <p style="color:var(--mist);margin:0" data-i18n="sup.p">Je développe Dofin seul, en parallèle de mes études. Un don paie les serveurs, le compte développeur Apple, et le temps passé sur les nouveautés.</p>
+          <ul class="perks">
+            <li data-i18n="sup.p1">Ton nom dans les remerciements de l'app, automatiquement</li>
+            <li data-i18n="sup.p2">Le rôle Supporter doré sur le Discord</li>
+            <li data-i18n="sup.p3">Les nouvelles versions en avant-première (abonnement mensuel)</li>
+          </ul>
+          <a class="gold" href="https://ko-fi.com/dofinapp" rel="noopener"><span aria-hidden="true">💛</span><span data-i18n="sup.cta">Soutenir sur Ko-fi</span></a>
+        </div>
+        <div class="wall">
+          <h3 data-i18n="sup.wall">Merci à eux</h3>
+          <div class="names" id="names"><span class="you" data-i18n="sup.you">Ton nom ici ?</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="faq">
     <div class="wrap faq">
       <div class="kicker">FAQ</div>
@@ -340,7 +380,7 @@ footer a{color:var(--foam);text-decoration:none} footer a:hover{text-decoration:
 <script>
 const T = {
  en: {
-  "nav.features":"Features","nav.faq":"FAQ","nav.dl":"Download",
+  "nav.features":"Features","nav.faq":"FAQ","nav.dl":"Download","nav.support":"💛 Support","sup.kicker":"Support Dofin","sup.title":"Dofin is free. It lives thanks to you.","sup.p":"I build Dofin on my own, alongside my studies. A donation pays for the servers, the Apple developer account, and the time spent on new features.","sup.p1":"Your name in the app's credits, automatically","sup.p2":"The golden Supporter role on Discord","sup.p3":"New versions before everyone else (monthly membership)","sup.cta":"Support on Ko-fi","sup.wall":"Thanks to them","sup.you":"Your name here?",
   "dl.cta":"Download the beta","dl.guide":"Installation guide","news.label":"All the news, live on the Discord","news.p":"Every update is announced there, and Dofin updates itself.","news.cta":"Join the Discord",
   "hero.pill":"New: Switch 2 games on your Mac",
   "hero.title":"Every console.<br><em>One Mac.</em>",
@@ -399,6 +439,20 @@ document.getElementById("lang-fr").onclick=()=>setLang("fr");
 document.getElementById("lang-en").onclick=()=>setLang("en");
 let saved=null; try{saved=localStorage.getItem("dofin-lang")}catch(_){}
 setLang(saved || ((navigator.language||"fr").toLowerCase().startsWith("fr") ? "fr" : "en"));
+</script>
+<script>
+// The donors' names, the same list as the app's "Thanks to them" (stats server first, the site's file if it's down).
+(async () => {
+  for (const u of ["https://stats.dofinapp.com/supporters.json", "/supporters.json"]) {
+    try {
+      const r = await fetch(u, { cache: "no-store" }); if (!r.ok) continue;
+      const names = ((await r.json()).names || []).filter(Boolean);
+      const box = document.getElementById("names"), you = box.querySelector(".you");
+      for (const n of names) { const e = document.createElement("span"); e.textContent = n; box.insertBefore(e, you); }
+      return;
+    } catch (e) {}
+  }
+})();
 </script>
 <script>
 // Anonymous visit count (no cookie, no IP stored): see stats.dofinapp.com.
