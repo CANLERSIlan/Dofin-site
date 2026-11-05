@@ -7,6 +7,15 @@
     <language>en</language>
     <!-- Each new version goes on top, as an <item>: its notes (one <ul> per language), version and signed download. -->
     <item>
+      <title>Dofin 0.10.2</title>
+      <pubDate>Thu, 05 Nov 2026 14:35:58 +0000</pubDate>
+      <sparkle:version>9</sparkle:version>
+      <sparkle:shortVersionString>0.10.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul lang="fr"><li>Switch 2 : les jeux en fichier .nup sont acceptés (glisse le fichier ou son dossier). Dofin lit le nom du jeu, ses mises à jour et ses DLC directement dans le .nup</li><li>Switch 2 : les dumps « à plat » (exefs et romfs directement dans le dossier du jeu, sans dossier base) sont reconnus</li><li>Dofin repère un dump incomplet (sans exefs/main ou avec un romfs vide) ou un .nup copié à moitié, et le dit tout de suite au lieu d'échouer pendant la compilation</li><li>Outils Switch entièrement automatiques : Dofin a maintenant son propre Python et y installe lui-même, sans Terminal, tous les modules que demande nxnative (la liste suit nxnative, zbic et nsz compris). Si une compilation s'arrête sur un module manquant, Dofin l'installe et relance tout seul. En revenant du Terminal ou de l'App Store, Dofin revérifie sans qu'on clique sur « Vérifier à nouveau »</li></ul><ul lang="en"><li>Switch 2: games as a .nup file are supported (drop the file or its folder). Dofin reads the game's name, updates and DLC straight from the .nup</li><li>Switch 2: "flat" dumps (exefs and romfs directly in the game's folder, with no base folder) are recognised</li><li>Dofin spots an incomplete dump (no exefs/main, or an empty romfs) or a partly copied .nup, and says so right away instead of failing mid-build</li><li>Fully automatic Switch tools: Dofin now has its own Python and installs every module nxnative asks for in it, by itself and without Terminal (the list follows nxnative, zbic and nsz included). If a build stops on a missing module, Dofin installs it and builds again. Back from Terminal or the App Store, Dofin checks again without clicking "Check again"</li></ul>]]></description>
+      <enclosure url="https://dofinapp.com/downloads/Dofin-0.10.2.dmg" sparkle:edSignature="pnTIS5Hfskrw/RLZJI2evth4vK8SMhm3DE/sylyClfzW4LOaQfTI4InLD1QoHv2m4e1n1XQ0f6LeU5YSojjpAg==" length="7722157" type="application/octet-stream"/>
+    </item>
+    <item>
       <title>Dofin 0.10.1</title>
       <pubDate>Wed, 04 Nov 2026 21:56:48 +0000</pubDate>
       <sparkle:version>8</sparkle:version>
