@@ -7,6 +7,15 @@
     <language>en</language>
     <!-- Each new version goes on top, as an <item>: its notes (one <ul> per language), version and signed download. -->
     <item>
+      <title>Dofin 0.10.4</title>
+      <pubDate>Thu, 05 Nov 2026 21:12:52 +0000</pubDate>
+      <sparkle:version>13</sparkle:version>
+      <sparkle:shortVersionString>0.10.4</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul lang="fr"><li>Dofin parle maintenant italien, allemand, espagnol et portugais (Brésil), en plus du français et de l'anglais. Il prend tout seul la langue de ton Mac, et elle se change dans Réglages → Général → Langue (ou dans Big Picture)</li><li>Les notes de mise à jour s'affichent dans ta langue, ou en anglais si elle n'y est pas</li></ul><ul lang="en"><li>Dofin now speaks Italian, German, Spanish and Portuguese (Brazil), on top of English and French. It picks your Mac's language by itself, and you can change it in Settings → General → Language (or in Big Picture)</li><li>Update notes show in your language, or in English when it isn't there</li></ul><ul lang="it"><li>Dofin ora parla italiano, tedesco, spagnolo e portoghese (Brasile), oltre a inglese e francese. Sceglie da solo la lingua del tuo Mac, e puoi cambiarla in Impostazioni → Generali → Lingua (o in Big Picture)</li><li>Le note di aggiornamento compaiono nella tua lingua, o in inglese se non c'è</li></ul><ul lang="de"><li>Dofin spricht jetzt Italienisch, Deutsch, Spanisch und Portugiesisch (Brasilien), zusätzlich zu Englisch und Französisch. Es übernimmt von selbst die Sprache deines Macs, und du kannst sie unter Einstellungen → Allgemein → Sprache ändern (oder in Big Picture)</li><li>Update-Hinweise erscheinen in deiner Sprache oder auf Englisch, wenn sie fehlt</li></ul><ul lang="es"><li>Dofin ahora habla italiano, alemán, español y portugués (Brasil), además de inglés y francés. Elige solo el idioma de tu Mac, y puedes cambiarlo en Ajustes → General → Idioma (o en Big Picture)</li><li>Las notas de actualización aparecen en tu idioma, o en inglés si no está</li></ul><ul lang="pt-BR"><li>O Dofin agora fala italiano, alemão, espanhol e português (Brasil), além de inglês e francês. Ele escolhe sozinho o idioma do seu Mac, e você pode mudar em Ajustes → Geral → Idioma (ou no Big Picture)</li><li>As notas de atualização aparecem no seu idioma, ou em inglês quando ele não estiver lá</li></ul>]]></description>
+      <enclosure url="https://dofinapp.com/downloads/Dofin-0.10.4.dmg" sparkle:edSignature="7ItYR85Mtkq8LYnSg2UX0PFMR3u9w8G64lxHqJR4YXafYbOWmxemOQFIQdukWP+COTqFoRgXno2Pc3rAZLMKBA==" length="7819981" type="application/octet-stream"/>
+    </item>
+    <item>
       <title>Dofin 0.10.3</title>
       <pubDate>Thu, 05 Nov 2026 19:57:34 +0000</pubDate>
       <sparkle:version>12</sparkle:version>
