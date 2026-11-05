@@ -7,6 +7,15 @@
     <language>en</language>
     <!-- Each new version goes on top, as an <item>: its notes (one <ul> per language), version and signed download. -->
     <item>
+      <title>Dofin 0.10.3</title>
+      <pubDate>Thu, 05 Nov 2026 19:57:34 +0000</pubDate>
+      <sparkle:version>12</sparkle:version>
+      <sparkle:shortVersionString>0.10.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <description><![CDATA[<ul lang="fr"><li>Statistiques : Dofin compte aussi les jeux les plus joués, additionnés pour tout le monde et jamais reliés à toi (désactivable dans Réglages → Général → Confidentialité)</li><li>Après la compilation d'un jeu Switch, un petit mot pour soutenir Dofin (au plus toutes les 2 semaines, jamais si tu as déjà donné)</li><li>Correction : un jeu Switch 2 qui venait de finir de compiler n'apparaissait pas toujours dans la bibliothèque (nouvelle version de nxnative)</li><li>Correction : les dumps Switch 2 « à plat » (exefs et romfs directement dans le dossier du jeu) sont bien reconnus</li></ul><ul lang="en"><li>Statistics: Dofin also counts the most played games, added up for everyone and never linked to you (can be turned off in Settings → General → Privacy)</li><li>After a Switch game is built, a short note to support Dofin (every 2 weeks at most, never if you already donated)</li><li>Fix: a Switch 2 game that just finished building didn't always show up in the library (newer nxnative)</li><li>Fix: "flat" Switch 2 dumps (exefs and romfs directly in the game's folder) are now recognised</li></ul>]]></description>
+      <enclosure url="https://dofinapp.com/downloads/Dofin-0.10.3.dmg" sparkle:edSignature="eb+Iyqhk0uLdKKDftZRfJgR4ivHqu/FNHoWDQpLdibvjDmHNFToAMqUBIIC3NTzoLY07kQtfpaIG71QHQ5kfAA==" length="7746488" type="application/octet-stream"/>
+    </item>
+    <item>
       <title>Dofin 0.10.2</title>
       <pubDate>Thu, 05 Nov 2026 14:35:58 +0000</pubDate>
       <sparkle:version>9</sparkle:version>
