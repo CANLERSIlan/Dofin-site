@@ -125,7 +125,7 @@ footer{padding:40px 0 50px;color:var(--mist);font-size:14px;text-align:center}
     <span class="pill" data-i="pill">Bêta publique · gratuite</span>
     <h1 data-i="title">Merci d'essayer Dofin.<br><em>Voici la bêta 0.10.5.</em></h1>
     <p class="lead" data-i="lead">Tu fais partie des premiers à la tester. Télécharge-la, installe-la en deux minutes avec le guide juste en dessous, et dis-moi ce qui coince.</p>
-    <a class="dl" href="https://stats.dofinapp.com/d?f=Dofin-0.10.5.dmg">
+    <a class="dl" href="/downloads/Dofin-0.10.5.dmg" download>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-5-5m5 5 5-5M5 20h14"/></svg>
       <span data-i="dl">Télécharger pour Mac</span>
     </a>
@@ -429,6 +429,11 @@ else document.querySelector(".cards").style.gridTemplateColumns = "repeat(auto-f
 <script>
 // Anonymous visit count (no cookie, no IP stored): see stats.dofinapp.com.
 try { navigator.sendBeacon("https://stats.dofinapp.com/v", JSON.stringify({ p: location.pathname, r: document.referrer })); } catch (e) {}
+// The download link points straight at the file, so it keeps working even if the stats server is down.
+// The count is sent on the side and never blocks the download.
+document.querySelectorAll('a.dl[href^="/downloads/"]').forEach(a => a.addEventListener("click", () => {
+  try { navigator.sendBeacon("https://stats.dofinapp.com/d?f=" + encodeURIComponent(a.getAttribute("href").split("/").pop())); } catch (e) {}
+}));
 </script>
 </body>
 </html>
