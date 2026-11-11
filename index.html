@@ -325,7 +325,7 @@ nav .links a{white-space:nowrap}
         <ul class="facts" style="margin-top:16px">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.1">Dofin est une app Mac native et gratuite, financée uniquement par les dons de ceux qui veulent la soutenir.</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.2">Aucun jeu, BIOS ni firmware fourni : tu utilises uniquement les copies que tu possèdes.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.3">Tes jeux restent sur ton Mac. Dofin envoie seulement des statistiques anonymes, une fois par jour, que tu peux couper dans les Réglages.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="t.3">Tes jeux restent sur ton Mac. Dofin envoie une fois par jour des statistiques d'utilisation, avec le pseudo et la photo de ton profil pour t'aider en cas de bug. Tu peux les couper dans les Réglages.</span></li>
         </ul>
       </div>
     </div>
@@ -389,7 +389,7 @@ nav .links a{white-space:nowrap}
       <span>© 2026 Dofin · <span data-i18n="ft.by">Créé par Ilan Canlers</span></span>
       <span><a href="https://www.youtube.com/@Dofinapp" rel="noopener">YouTube</a> · <a href="mailto:hello@dofinapp.com">Contact</a> · <a href="#privacy" data-i18n="ft.priv">Confidentialité</a></span>
     </div>
-    <p class="privacy" id="privacy" data-i18n="ft.privtext">Confidentialité : le site ne te demande aucune donnée personnelle. Il compte les visites sans cookie et sans garder ton adresse IP, et l'app envoie une fois par jour des statistiques anonymes (version, Mac, temps de jeu par console, et les jeux les plus joués additionnés pour tout le monde, jamais reliés à toi), désactivables dans ses Réglages. Dofin n'est affilié à aucun fabricant de consoles ; les marques citées appartiennent à leurs propriétaires.</p>
+    <p class="privacy" id="privacy" data-i18n="ft.privtext">Confidentialité : le site ne te demande aucune donnée personnelle. Il compte les visites sans cookie et sans garder ton adresse IP. L'app envoie une fois par jour des statistiques d'utilisation : version, Mac, temps de jeu par console, la liste de tes jeux (titres seulement, jamais les fichiers) et, depuis la 0.11, le pseudo, la photo et le pseudo Discord facultatif de tes profils, pour relier un problème signalé à la bonne personne. Rien n'est vendu ni partagé. Tout se coupe dans les Réglages de l'app, et tu peux demander la suppression de tes données à hello@dofinapp.com. Dofin n'est affilié à aucun fabricant de consoles ; les marques citées appartiennent à leurs propriétaires.</p>
   </div>
 </footer>
 
@@ -422,7 +422,7 @@ const T = {
   "t.kicker":"Our commitments",
   "t.1":"Dofin is a native Mac app, free, funded only by donations from people who want to support it.",
   "t.2":"No games, BIOS or firmware provided: you only use copies you own.",
-  "t.3":"Your games stay on your Mac. Dofin only sends anonymous statistics once a day, which you can turn off in Settings.",
+  "t.3":"Your games stay on your Mac. Dofin sends usage statistics once a day, with your profile's pseudo and picture so a bug you report can be found. You can turn them off in Settings.",
   "q.title":"Frequently asked questions",
   "q1":"Is Dofin free?","a1":"Yes, completely. Dofin is built by a student in his spare time and runs on donations, with no ads or subscription.",
   "q2":"Which Macs does it run on?","a2":"Apple Silicon Macs (M1 and newer), with macOS 14 Sonoma or later. Dofin also opens on Intel Macs, but Switch and Switch 2 games (and some emulators) need an Apple chip.",
@@ -431,7 +431,7 @@ const T = {
   "q5":"Why does macOS block Dofin the first time?","a5":"Dofin isn't certified by Apple yet (the certification costs $99 a year). You just need to allow it once in System Settings → Privacy & Security. The <a href=\"/beta/#install\">installation guide</a> shows you how, in four steps.",
   "end.title":"Ready to play?","end.p":"The beta is free and open to everyone. Download it, install it in two minutes, and come tell us what you think on Discord.",
   "ft.by":"Made by Ilan Canlers","ft.priv":"Privacy",
-  "ft.privtext":"Privacy: the site doesn't ask you for any personal data. It counts visits without cookies and without keeping your IP address, and the app sends anonymous statistics once a day (version, Mac, play time per console, and the most played games added up for everyone, never linked to you), which can be turned off in its Settings. Dofin is not affiliated with any console maker; the brands mentioned belong to their owners."
+  "ft.privtext":"Privacy: the site doesn't ask you for any personal data. It counts visits without cookies and without keeping your IP address. The app sends usage statistics once a day: version, Mac, play time per console, your game list (titles only, never files) and, since 0.11, your profiles' pseudo, picture and optional Discord name, to match a reported problem to the right person. Nothing is sold or shared. You can turn it all off in the app's Settings, and ask for your data to be deleted at hello@dofinapp.com. Dofin is not affiliated with any console maker; the brands mentioned belong to their owners."
  },
  fr: {},
  "it": {
@@ -497,7 +497,7 @@ const T = {
   "t.kicker":"I nostri impegni",
   "t.1":"Dofin è un'app nativa per Mac, gratuita, finanziata solo dalle donazioni di chi vuole sostenerla.",
   "t.2":"Nessun gioco, BIOS o firmware fornito: usi solo copie che possiedi.",
-  "t.3":"I tuoi giochi restano sul tuo Mac. Dofin invia solo statistiche anonime una volta al giorno, disattivabili nelle Impostazioni.",
+  "t.3":"I tuoi giochi restano sul tuo Mac. Dofin invia una volta al giorno statistiche d'uso, con il nickname e la foto del tuo profilo per aiutarti in caso di bug. Puoi disattivarle nelle Impostazioni.",
   "q.title":"Domande frequenti",
   "q1":"Dofin è gratuito?",
   "a1":"Sì, completamente. Dofin è sviluppato da uno studente nel tempo libero e vive di donazioni, senza pubblicità né abbonamento.",
@@ -513,7 +513,7 @@ const T = {
   "end.p":"La beta è gratuita e aperta a tutti. Scaricala, installala in due minuti e vieni a dirci cosa ne pensi su Discord.",
   "ft.by":"Creato da Ilan Canlers",
   "ft.priv":"Privacy",
-  "ft.privtext":"Privacy: il sito non ti chiede alcun dato personale. Conta le visite senza cookie e senza conservare il tuo indirizzo IP, e l'app invia una volta al giorno statistiche anonime (versione, Mac, tempo di gioco per console e i giochi più giocati sommati per tutti, mai collegati a te), disattivabili nelle sue Impostazioni. Dofin non è affiliato ad alcun produttore di console; i marchi citati appartengono ai rispettivi proprietari."
+  "ft.privtext":"Privacy: il sito non ti chiede alcun dato personale. Conta le visite senza cookie e senza conservare il tuo indirizzo IP. L'app invia una volta al giorno statistiche d'uso: versione, Mac, tempo di gioco per console, la lista dei tuoi giochi (solo i titoli, mai i file) e, dalla 0.11, nickname, foto e nickname Discord facoltativo dei tuoi profili, per collegare un problema segnalato alla persona giusta. Nulla viene venduto o condiviso. Puoi disattivare tutto nelle Impostazioni dell'app e chiedere la cancellazione dei tuoi dati a hello@dofinapp.com. Dofin non è affiliato ad alcun produttore di console; i marchi citati appartengono ai rispettivi proprietari."
  },
  "de": {
   "nav.features":"Funktionen",
@@ -578,7 +578,7 @@ const T = {
   "t.kicker":"Unsere Versprechen",
   "t.1":"Dofin ist eine native Mac-App, kostenlos und nur durch Spenden von Leuten finanziert, die es unterstützen möchten.",
   "t.2":"Keine Spiele, BIOS oder Firmware enthalten: Du verwendest nur Kopien, die du besitzt.",
-  "t.3":"Deine Spiele bleiben auf deinem Mac. Dofin sendet nur einmal am Tag anonyme Statistiken, die du in den Einstellungen abschalten kannst.",
+  "t.3":"Deine Spiele bleiben auf deinem Mac. Dofin sendet einmal am Tag Nutzungsstatistiken, mit Name und Bild deines Profils, damit ein gemeldeter Fehler gefunden wird. Du kannst sie in den Einstellungen abschalten.",
   "q.title":"Häufige Fragen",
   "q1":"Ist Dofin kostenlos?",
   "a1":"Ja, komplett. Dofin wird von einem Studenten in seiner Freizeit entwickelt und lebt von Spenden, ohne Werbung und ohne Abo.",
@@ -594,7 +594,7 @@ const T = {
   "end.p":"Die Beta ist kostenlos und für alle offen. Lade sie herunter, installiere sie in zwei Minuten und sag uns auf Discord, was du davon hältst.",
   "ft.by":"Gemacht von Ilan Canlers",
   "ft.priv":"Datenschutz",
-  "ft.privtext":"Datenschutz: Die Website fragt dich nach keinen persönlichen Daten. Sie zählt Besuche ohne Cookies und ohne deine IP-Adresse zu speichern, und die App sendet einmal am Tag anonyme Statistiken (Version, Mac, Spielzeit pro Konsole und die meistgespielten Spiele, für alle zusammengezählt, nie mit dir verknüpft), die in ihren Einstellungen abgeschaltet werden können. Dofin ist mit keinem Konsolenhersteller verbunden; die genannten Marken gehören ihren Inhabern."
+  "ft.privtext":"Datenschutz: Die Website fragt dich nach keinen persönlichen Daten. Sie zählt Besuche ohne Cookies und ohne deine IP-Adresse zu speichern. Die App sendet einmal am Tag Nutzungsstatistiken: Version, Mac, Spielzeit pro Konsole, deine Spieleliste (nur Titel, nie Dateien) und seit 0.11 Name, Bild und optionalen Discord-Namen deiner Profile, um ein gemeldetes Problem der richtigen Person zuzuordnen. Nichts wird verkauft oder weitergegeben. Du kannst alles in den Einstellungen der App abschalten und die Löschung deiner Daten unter hello@dofinapp.com verlangen. Dofin ist mit keinem Konsolenhersteller verbunden; die genannten Marken gehören ihren Inhabern."
  },
  "es": {
   "nav.features":"Funciones",
@@ -659,7 +659,7 @@ const T = {
   "t.kicker":"Nuestros compromisos",
   "t.1":"Dofin es una app nativa de Mac, gratis, financiada solo por las donaciones de quienes quieren apoyarla.",
   "t.2":"No incluye juegos, BIOS ni firmware: solo usas copias que tienes.",
-  "t.3":"Tus juegos se quedan en tu Mac. Dofin solo envía estadísticas anónimas una vez al día, que puedes desactivar en Ajustes.",
+  "t.3":"Tus juegos se quedan en tu Mac. Dofin envía una vez al día estadísticas de uso, con el nombre y la foto de tu perfil para ayudarte si hay un fallo. Puedes desactivarlas en Ajustes.",
   "q.title":"Preguntas frecuentes",
   "q1":"¿Dofin es gratis?",
   "a1":"Sí, totalmente. Dofin lo desarrolla un estudiante en su tiempo libre y vive de donaciones, sin anuncios ni suscripción.",
@@ -675,7 +675,7 @@ const T = {
   "end.p":"La beta es gratis y abierta a todos. Descárgala, instálala en dos minutos y ven a contarnos qué te parece en Discord.",
   "ft.by":"Hecho por Ilan Canlers",
   "ft.priv":"Privacidad",
-  "ft.privtext":"Privacidad: el sitio no te pide ningún dato personal. Cuenta las visitas sin cookies y sin guardar tu dirección IP, y la app envía una vez al día estadísticas anónimas (versión, Mac, tiempo de juego por consola y los juegos más jugados sumados para todos, nunca vinculados a ti), que se pueden desactivar en sus Ajustes. Dofin no está afiliado a ningún fabricante de consolas; las marcas citadas pertenecen a sus propietarios."
+  "ft.privtext":"Privacidad: el sitio no te pide ningún dato personal. Cuenta las visitas sin cookies y sin guardar tu dirección IP. La app envía una vez al día estadísticas de uso: versión, Mac, tiempo de juego por consola, tu lista de juegos (solo títulos, nunca archivos) y, desde la 0.11, el nombre, la foto y el nombre de Discord opcional de tus perfiles, para vincular un problema reportado con la persona correcta. Nada se vende ni se comparte. Puedes desactivarlo todo en los Ajustes de la app y pedir que se borren tus datos en hello@dofinapp.com. Dofin no está afiliado a ningún fabricante de consolas; las marcas citadas pertenecen a sus propietarios."
  },
  "pt-BR": {
   "nav.features":"Recursos",
@@ -740,7 +740,7 @@ const T = {
   "t.kicker":"Nossos compromissos",
   "t.1":"O Dofin é um app nativo para Mac, gratuito, financiado só pelas doações de quem quer apoiá-lo.",
   "t.2":"Nenhum jogo, BIOS ou firmware incluído: você só usa cópias que tem.",
-  "t.3":"Seus jogos ficam no seu Mac. O Dofin só envia estatísticas anônimas uma vez por dia, que você pode desativar nos Ajustes.",
+  "t.3":"Seus jogos ficam no seu Mac. O Dofin envia uma vez por dia estatísticas de uso, com o nick e a foto do seu perfil para te ajudar se houver um bug. Você pode desativá-las nos Ajustes.",
   "q.title":"Perguntas frequentes",
   "q1":"O Dofin é gratuito?",
   "a1":"Sim, totalmente. O Dofin é feito por um estudante no tempo livre e vive de doações, sem anúncios nem assinatura.",
@@ -756,7 +756,7 @@ const T = {
   "end.p":"O beta é gratuito e aberto a todos. Baixe, instale em dois minutos e venha contar o que achou no Discord.",
   "ft.by":"Feito por Ilan Canlers",
   "ft.priv":"Privacidade",
-  "ft.privtext":"Privacidade: o site não pede nenhum dado pessoal. Ele conta as visitas sem cookies e sem guardar seu endereço IP, e o app envia uma vez por dia estatísticas anônimas (versão, Mac, tempo de jogo por console e os jogos mais jogados somados para todos, nunca ligados a você), que podem ser desativadas nos Ajustes dele. O Dofin não é afiliado a nenhum fabricante de consoles; as marcas citadas pertencem aos seus donos."
+  "ft.privtext":"Privacidade: o site não pede nenhum dado pessoal. Ele conta as visitas sem cookies e sem guardar seu endereço IP. O app envia uma vez por dia estatísticas de uso: versão, Mac, tempo de jogo por console, sua lista de jogos (só títulos, nunca arquivos) e, desde a 0.11, o nick, a foto e o nick do Discord opcional dos seus perfis, para ligar um problema reportado à pessoa certa. Nada é vendido nem compartilhado. Dá para desligar tudo nos Ajustes do app e pedir a exclusão dos seus dados em hello@dofinapp.com. O Dofin não é afiliado a nenhum fabricante de consoles; as marcas citadas pertencem aos seus donos."
  }
 };
 // French comes from the page itself.
